@@ -24,80 +24,86 @@ input {
   content: '';
   clear: both; }
 
-header .header-top {
-  position: relative;
-  box-sizing: border-box;
-  width: 980px;
-  height: 47px;
-  text-align: center;
-  margin: 0 auto; }
-  header .header-top img {
-    float: left;
-    height: 27px;
-    width: 88px;
-    margin-top: 9px;
-    margin-bottom: 12px; }
-  header .header-top .game-center {
-    float: right;
-    margin-top: 10px;
-    margin-right: 12px; }
-    header .header-top .game-center i {
-      margin-right: 5px; }
-    header .header-top .game-center a {
-      font-size: 12px;
-      vertical-align: bottom; }
-    header .header-top .game-center a:hover {
-      color: #f84962; }
-  header .header-top .download {
-    float: right;
-    margin-top: 10px; }
-    header .header-top .download i {
-      margin-right: 2px; }
-    header .header-top .download a {
-      font-size: 12px;
-      vertical-align: bottom; }
-    header .header-top .download a:hover {
-      color: #f84962; }
-  header .header-top .search {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-70%, -50%); }
-    header .header-top .search input[type="text"] {
+header .wrap {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #fff;
+  z-index: 100; }
+  header .wrap .header-top {
+    height: 47px;
+    box-sizing: border-box;
+    width: 980px;
+    text-align: center;
+    margin: 0 auto; }
+    header .wrap .header-top img {
       float: left;
-      box-sizing: border-box;
-      padding-left: 10px;
-      width: 264px;
-      height: 33px;
-      border: 1px solid #e2e2e2;
-      color: #999;
-      border-radius: 5px 0 0 5px; }
-    header .header-top .search button {
-      float: left;
-      width: 46px;
-      height: 32px;
-      color: #fff;
-      background-color: #f84962;
-      margin-left: -1px;
-      border-radius: 0 5px 5px 0;
-      cursor: pointer; }
-  header .header-top .user {
-    float: right;
-    margin-top: 10px; }
-    header .header-top .user li {
+      height: 27px;
+      width: 88px;
+      margin-top: 9px;
+      margin-bottom: 12px; }
+    header .wrap .header-top .game-center {
       float: right;
-      margin-left: 21px; }
-      header .header-top .user li i {
-        color: #909699; }
-      header .header-top .user li i:hover {
+      margin-top: 10px;
+      margin-right: 12px; }
+      header .wrap .header-top .game-center i {
+        margin-right: 5px; }
+      header .wrap .header-top .game-center a {
+        font-size: 12px;
+        vertical-align: bottom; }
+      header .wrap .header-top .game-center a:hover {
         color: #f84962; }
-    header .header-top .user li:last-of-type {
-      margin-top: 5px; }
-    header .header-top .user a:hover {
-      color: #f84962; }
+    header .wrap .header-top .download {
+      float: right;
+      margin-top: 10px; }
+      header .wrap .header-top .download i {
+        margin-right: 2px; }
+      header .wrap .header-top .download a {
+        font-size: 12px;
+        vertical-align: bottom; }
+      header .wrap .header-top .download a:hover {
+        color: #f84962; }
+    header .wrap .header-top .search {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-70%, -50%); }
+      header .wrap .header-top .search input[type="text"] {
+        float: left;
+        box-sizing: border-box;
+        padding-left: 10px;
+        width: 264px;
+        height: 33px;
+        border: 1px solid #e2e2e2;
+        color: #999;
+        border-radius: 5px 0 0 5px; }
+      header .wrap .header-top .search button {
+        float: left;
+        width: 46px;
+        height: 32px;
+        color: #fff;
+        background-color: #f84962;
+        margin-left: -1px;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer; }
+    header .wrap .header-top .user {
+      float: right;
+      margin-top: 10px; }
+      header .wrap .header-top .user li {
+        float: right;
+        margin-left: 21px; }
+        header .wrap .header-top .user li i {
+          color: #909699; }
+        header .wrap .header-top .user li i:hover {
+          color: #f84962; }
+      header .wrap .header-top .user li:last-of-type {
+        margin-top: 5px; }
+      header .wrap .header-top .user a:hover {
+        color: #f84962; }
 header .header-banner {
   width: 100%;
   height: 180px;
+  margin-top: 47px;
   background: url("src/pic/banner.jpg") no-repeat center top;
   background-size: cover; }
 header nav {
@@ -116,6 +122,8 @@ header nav {
       margin-right: 34px; }
     header nav ul li:first-of-type {
       margin-left: 4px; }
+    header nav ul li:hover {
+      color: #f84962; }
     header nav ul .active {
       color: #f84962; }
     header nav ul .rank {
@@ -124,12 +132,14 @@ header nav {
       top: 50%;
       transform: translateY(-50%);
       right: 0; }
+      header nav ul .rank i {
+        vertical-align: middle; }
     header nav ul .line {
       position: absolute;
-      width: 36px;
+      width: 40px;
       left: 0;
       bottom: 0;
-      height: 2px;
+      height: 3px;
       margin: 0;
       background-color: #f84962; }
 

@@ -35,99 +35,106 @@ input {
 }
 
 header {
-    .header-top {
-        position: relative;
-        box-sizing: border-box;
-        width: 980px;
-        height: 47px;
-        text-align: center;
-        margin: 0 auto;
-        img {
-            float: left;
-            height: 27px;
-            width: 88px;
-            margin-top: 9px;
-            margin-bottom: 12px;
-        }
-        .game-center {
-            i {
-                margin-right: 5px;
-            }
-            float: right;
-            margin-top: 10px;
-            margin-right: 12px;
-            a {
-                font-size: 12px;
-                vertical-align: bottom;
-            }
-            a:hover {
-                color: $theme-red;
-            }
-        }
-        .download {
-            i {
-                margin-right: 2px;
-            }
-            float: right;
-            margin-top: 10px;
-            a {
-                font-size: 12px;
-                vertical-align: bottom;
-            }
-            a:hover {
-                color: $theme-red;
-            }
-        }
-        .search {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-70%, -50%);
-            input[type="text"] {
+    .wrap {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        background-color: #fff;
+        z-index: 100;
+        .header-top {
+            height: 47px;
+            box-sizing: border-box;
+            width: 980px;
+            text-align: center;
+            margin: 0 auto;
+            img {
                 float: left;
-                box-sizing: border-box;
-                padding-left: 10px;
-                width: 264px;
-                height: 33px;
-                border: 1px solid $theme-grey;
-                color: $font-grey;
-                border-radius: 5px 0 0 5px;
+                height: 27px;
+                width: 88px;
+                margin-top: 9px;
+                margin-bottom: 12px;
             }
-            button {
-                float: left;
-                width: 46px;
-                height: 32px;
-                color: #fff;
-                background-color: $theme-red;
-                margin-left: -1px;
-                border-radius: 0 5px 5px 0;
-                cursor: pointer;
-            }
-        }
-        .user {
-            float: right;
-            margin-top: 10px;
-            li {
-                float: right;
-                margin-left: 21px;
+            .game-center {
                 i {
-                    color: rgb(144, 150, 153);
+                    margin-right: 5px;
                 }
-                i:hover {
+                float: right;
+                margin-top: 10px;
+                margin-right: 12px;
+                a {
+                    font-size: 12px;
+                    vertical-align: bottom;
+                }
+                a:hover {
                     color: $theme-red;
                 }
             }
-            li:last-of-type {
-                margin-top: 5px;
+            .download {
+                i {
+                    margin-right: 2px;
+                }
+                float: right;
+                margin-top: 10px;
+                a {
+                    font-size: 12px;
+                    vertical-align: bottom;
+                }
+                a:hover {
+                    color: $theme-red;
+                }
             }
-            a:hover {
-                color: $theme-red;
+            .search {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-70%, -50%);
+                input[type="text"] {
+                    float: left;
+                    box-sizing: border-box;
+                    padding-left: 10px;
+                    width: 264px;
+                    height: 33px;
+                    border: 1px solid $theme-grey;
+                    color: $font-grey;
+                    border-radius: 5px 0 0 5px;
+                }
+                button {
+                    float: left;
+                    width: 46px;
+                    height: 32px;
+                    color: #fff;
+                    background-color: $theme-red;
+                    margin-left: -1px;
+                    border-radius: 0 5px 5px 0;
+                    cursor: pointer;
+                }
+            }
+            .user {
+                float: right;
+                margin-top: 10px;
+                li {
+                    float: right;
+                    margin-left: 21px;
+                    i {
+                        color: rgb(144, 150, 153);
+                    }
+                    i:hover {
+                        color: $theme-red;
+                    }
+                }
+                li:last-of-type {
+                    margin-top: 5px;
+                }
+                a:hover {
+                    color: $theme-red;
+                }
             }
         }
     }
     .header-banner {
         width: 100%;
         height: 180px;
+        margin-top: 47px;
         background: url('src/pic/banner.jpg') no-repeat center top;
         background-size: cover;
     }
@@ -149,6 +156,9 @@ header {
             li:first-of-type {
                 margin-left: 4px;
             }
+            li:hover {
+                color: $theme-red;
+            }
             .active {
                 color: $theme-red;
             }
@@ -158,16 +168,21 @@ header {
                 top: 50%;
                 transform: translateY(-50%);
                 right: 0;
+                i {
+                    vertical-align: middle;
+                }
             }
             .line {
                 position: absolute;
-                width: 36px;
+                width: 40px;
                 left: 0;
                 bottom: 0;
-                height: 2px;
+                height: 3px;
                 margin: 0;
                 background-color: $theme-red;
             }
         }
     }
 }
+
+main {}
