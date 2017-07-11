@@ -107,25 +107,37 @@ header .header-banner {
   background: url("src/pic/banner.jpg") no-repeat center top;
   background-size: cover; }
 header nav {
+  position: relative;
   height: 46px;
   border-bottom: 1px solid #eee; }
   header nav ul {
-    display: flex;
     position: relative;
-    align-items: center;
     margin: 0 auto;
     width: 980px;
     height: 100%;
     font-size: 14px;
     color: #333; }
-    header nav ul li {
-      margin-right: 34px; }
-    header nav ul li:first-of-type {
-      margin-left: 4px; }
+    header nav ul > li {
+      float: left;
+      padding: 14px 4px 12px 4px;
+      margin-right: 26px;
+      position: relative; }
+      header nav ul > li ul {
+        position: absolute;
+        z-index: 5;
+        display: none;
+        top: 100%; }
+        header nav ul > li ul li {
+          float: left;
+          padding: 14px 8px 12px 0;
+          margin-right: 26px; }
     header nav ul li:hover {
       color: #f84962; }
+      header nav ul li:hover ul {
+        display: block; }
     header nav ul .active {
-      color: #f84962; }
+      color: #f84962;
+      border-bottom: 3px solid #f84962; }
     header nav ul .rank {
       margin-right: 0;
       position: absolute;
@@ -134,13 +146,15 @@ header nav {
       right: 0; }
       header nav ul .rank i {
         vertical-align: middle; }
-    header nav ul .line {
-      position: absolute;
-      width: 40px;
-      left: 0;
-      bottom: 0;
-      height: 3px;
-      margin: 0;
-      background-color: #f84962; }
+  header nav .moreGroupBg {
+    position: absolute;
+    display: none;
+    z-index: 1;
+    top: 100%;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid #eee;
+    box-shadow: 0px 1px #eee; }
 
 /*# sourceMappingURL=acfun.css.map */
