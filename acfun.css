@@ -24,6 +24,10 @@ input {
   content: '';
   clear: both; }
 
+.center {
+  width: 980px;
+  margin: 0 auto; }
+
 header .wrap {
   position: fixed;
   width: 100%;
@@ -153,8 +157,45 @@ header nav {
     top: 100%;
     height: 100%;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: #f8f8f8;
+    opacity: 0.9;
     border-bottom: 1px solid #eee;
     box-shadow: 0px 1px #eee; }
+
+main .carouselAndVideo {
+  margin-top: 10px; }
+  main .carouselAndVideo .carousel-container {
+    position: relative;
+    width: 508px;
+    height: 260px;
+    overflow: hidden; }
+    main .carouselAndVideo .carousel-container .carousel {
+      position: absolute;
+      width: 2540px;
+      left: 0; }
+      main .carouselAndVideo .carousel-container .carousel li {
+        float: left;
+        position: relative; }
+        main .carouselAndVideo .carousel-container .carousel li .videoIntro {
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          color: #fff; }
+    main .carouselAndVideo .carousel-container .bullet {
+      position: absolute;
+      bottom: 10px;
+      right: 10px; }
+      main .carouselAndVideo .carousel-container .bullet li {
+        float: left;
+        margin-right: 10px;
+        width: 8px;
+        height: 8px;
+        background-color: #fff;
+        border-radius: 50%;
+        cursor: pointer; }
+      main .carouselAndVideo .carousel-container .bullet .active {
+        width: 16px;
+        border-radius: 4px;
+        background-color: #f84962; }
 
 /*# sourceMappingURL=acfun.css.map */
