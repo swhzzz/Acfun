@@ -147,7 +147,8 @@ header nav {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      right: 0; }
+      right: 0;
+      cursor: pointer; }
       header nav ul .rank i {
         vertical-align: middle; }
   header nav .moreGroupBg {
