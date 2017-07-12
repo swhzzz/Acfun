@@ -166,6 +166,7 @@ main .carouselAndVideo {
   margin-top: 10px; }
   main .carouselAndVideo .carousel-container {
     position: relative;
+    float: left;
     width: 508px;
     height: 260px;
     overflow: hidden; }
@@ -197,5 +198,47 @@ main .carouselAndVideo {
         width: 16px;
         border-radius: 4px;
         background-color: #f84962; }
+  main .carouselAndVideo .video {
+    float: right;
+    margin-left: 20px;
+    margin-right: -20px;
+    width: 472px;
+    height: 280px; }
+    main .carouselAndVideo .video .videoList {
+      width: 100%; }
+      main .carouselAndVideo .video .videoList li {
+        position: relative;
+        float: left;
+        margin-right: 20px;
+        margin-bottom: 20px; }
+        main .carouselAndVideo .video .videoList li > a img {
+          vertical-align: middle;
+          width: 216px;
+          height: 120px; }
+        main .carouselAndVideo .video .videoList li > p {
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          color: #fff; }
+        main .carouselAndVideo .video .videoList li .videoIntro {
+          position: absolute;
+          display: none;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          padding: 10px;
+          box-sizing: border-box;
+          background-color: rgba(0, 0, 0, 0.7); }
+          main .carouselAndVideo .video .videoList li .videoIntro h4 {
+            margin-bottom: 50px;
+            color: #fff; }
+          main .carouselAndVideo .video .videoList li .videoIntro p {
+            color: #fff; }
+          main .carouselAndVideo .video .videoList li .videoIntro span {
+            margin-right: 30px;
+            color: #fff; }
+            main .carouselAndVideo .video .videoList li .videoIntro span b {
+              font-size: 12px; }
 
 /*# sourceMappingURL=acfun.css.map */

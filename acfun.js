@@ -5,17 +5,20 @@ window.$ = $
 
 
 
-
-//nav
+let timer2 = null
+    //nav
 let navList = $('nav>ul:first')
-navList.on('mouseout', function(e) {
+navList.on('mouseenter', function(e) {
     let moreGroupBg = $('.moreGroupBg:first')
-    moreGroupBg.css('display', 'none')
+    timer2 = setTimeout(function() {
+        moreGroupBg.show(500)
+    }, 500)
 })
-navList.on('mouseover', function(e) {
+navList.on('mouseleave', function(e) {
     let moreGroupBg = $('.moreGroupBg:first')
-    moreGroupBg.css('display', 'block')
+    moreGroupBg.hide(500)
 })
+
 
 
 
@@ -91,3 +94,15 @@ function autoPlay() { //自动播放
     }, 3000)
 }
 autoPlay()
+
+
+
+//videoIntro
+$('.videoList').on('mouseenter', 'li', function() {
+    $(this).find('.videoTitle').hide()
+    $(this).find('.videoIntro').show()
+})
+$('.videoList').on('mouseleave', 'li', function() {
+    $(this).find('.videoTitle').show()
+    $(this).find('.videoIntro').hide()
+})

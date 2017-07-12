@@ -78,17 +78,20 @@ window.$ = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a
 
 
 
-
-//nav
+let timer2 = null
+    //nav
 let navList = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('nav>ul:first')
-navList.on('mouseout', function(e) {
+navList.on('mouseenter', function(e) {
     let moreGroupBg = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.moreGroupBg:first')
-    moreGroupBg.css('display', 'none')
+    timer2 = setTimeout(function() {
+        moreGroupBg.show(500)
+    }, 500)
 })
-navList.on('mouseover', function(e) {
+navList.on('mouseleave', function(e) {
     let moreGroupBg = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.moreGroupBg:first')
-    moreGroupBg.css('display', 'block')
+    moreGroupBg.hide(500)
 })
+
 
 
 
@@ -164,6 +167,18 @@ function autoPlay() { //自动播放
     }, 3000)
 }
 autoPlay()
+
+
+
+//videoIntro
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.videoList').on('mouseenter', 'li', function() {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).find('.videoTitle').hide()
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).find('.videoIntro').show()
+})
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.videoList').on('mouseleave', 'li', function() {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).find('.videoTitle').show()
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).find('.videoIntro').hide()
+})
 
 /***/ }),
 /* 1 */

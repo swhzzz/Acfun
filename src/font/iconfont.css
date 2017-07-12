@@ -19,6 +19,7 @@
 
 .icon-3:before {
     content: "\e639";
+    font-size: 16px;
 }
 
 .icon-refresh:before {
@@ -52,6 +53,7 @@
 
 .icon-play:before {
     content: "\e63b";
+    font-size: 16px;
 }
 
 .icon-msg:before {
