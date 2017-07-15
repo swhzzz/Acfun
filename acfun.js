@@ -5,18 +5,16 @@ window.$ = $
 
 
 
-let timer2 = null
-    //nav
+
+//nav
 let navList = $('nav>ul:first')
 navList.on('mouseenter', function(e) {
     let moreGroupBg = $('.moreGroupBg:first')
-    timer2 = setTimeout(function() {
-        moreGroupBg.show(500)
-    }, 500)
+    moreGroupBg.show()
 })
 navList.on('mouseleave', function(e) {
     let moreGroupBg = $('.moreGroupBg:first')
-    moreGroupBg.hide(500)
+    moreGroupBg.hide()
 })
 
 
@@ -105,4 +103,32 @@ $('.videoList').on('mouseenter', 'li', function() {
 $('.videoList').on('mouseleave', 'li', function() {
     $(this).find('.videoTitle').show()
     $(this).find('.videoIntro').hide()
+})
+
+
+//banna-rank-video-list 
+$('#week-rank').on('click', function() {
+    $('#day-rank').removeClass('active')
+    $('#week-rank').addClass('active')
+    console.log($('.column-left>.video-list'))
+    $('.column-left .video-list').removeClass('active')
+    $('.column-left .video-list').eq(1).addClass('active')
+
+})
+
+$('#day-rank').on('click', function() {
+    $('#week-rank').removeClass('active')
+    $('#day-rank').addClass('active')
+    $('.column-left .video-list').removeClass('active')
+    $('.column-left .video-list').eq(0).addClass('active')
+})
+
+//article-img-intro
+
+$('.article-type').on('mouseenter', 'li', function() {
+    $(this).siblings().removeClass('active')
+    $(this).addClass('active')
+    let pos = $(this).index()
+    $('.article-list>li').removeClass('active')
+    $('.article-list>li').eq(pos).addClass('active')
 })

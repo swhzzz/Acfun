@@ -78,18 +78,16 @@ window.$ = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a
 
 
 
-let timer2 = null
-    //nav
+
+//nav
 let navList = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('nav>ul:first')
 navList.on('mouseenter', function(e) {
     let moreGroupBg = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.moreGroupBg:first')
-    timer2 = setTimeout(function() {
-        moreGroupBg.show(500)
-    }, 500)
+    moreGroupBg.show()
 })
 navList.on('mouseleave', function(e) {
     let moreGroupBg = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.moreGroupBg:first')
-    moreGroupBg.hide(500)
+    moreGroupBg.hide()
 })
 
 
@@ -178,6 +176,34 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.videoList').on('mouseenter', 'l
 __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.videoList').on('mouseleave', 'li', function() {
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).find('.videoTitle').show()
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).find('.videoIntro').hide()
+})
+
+
+//banna-rank-video-list 
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#week-rank').on('click', function() {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#day-rank').removeClass('active')
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#week-rank').addClass('active')
+    console.log(__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.column-left>.video-list'))
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.column-left .video-list').removeClass('active')
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.column-left .video-list').eq(1).addClass('active')
+
+})
+
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#day-rank').on('click', function() {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#week-rank').removeClass('active')
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#day-rank').addClass('active')
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.column-left .video-list').removeClass('active')
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.column-left .video-list').eq(0).addClass('active')
+})
+
+//article-img-intro
+
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.article-type').on('mouseenter', 'li', function() {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).siblings().removeClass('active')
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).addClass('active')
+    let pos = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).index()
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.article-list>li').removeClass('active')
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.article-list>li').eq(pos).addClass('active')
 })
 
 /***/ }),

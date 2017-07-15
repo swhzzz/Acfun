@@ -58,6 +58,7 @@
 
 .icon-msg:before {
     content: "\e600";
+    font-size: 12px;
 }
 
 .icon-game:before {
