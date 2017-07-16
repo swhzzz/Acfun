@@ -106,15 +106,12 @@ $('.bullet').on('click', 'li', function() {
 })
 
 function autoPlay() { //自动播放
-
     clearInterval(timer)
     timer = setInterval(function() {
         playNext(1)
     }, 3000)
 }
-$('.carousel>img').on('load', function() {
-    autoPlay()
-})
+autoPlay()
 
 
 //videoIntro

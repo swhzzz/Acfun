@@ -179,15 +179,12 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.bullet').on('click', 'li', func
 })
 
 function autoPlay() { //自动播放
-
     clearInterval(timer)
     timer = setInterval(function() {
         playNext(1)
     }, 3000)
 }
-__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.carousel>img').on('load', function() {
-    autoPlay()
-})
+autoPlay()
 
 
 //videoIntro
