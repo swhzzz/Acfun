@@ -634,7 +634,51 @@ header nav {
     height: 84px; }
 
 footer {
-  margin-top: 40px;
   background-color: #ececec; }
+  footer .footer-top {
+    position: relative;
+    padding-top: 36px; }
+    footer .footer-top ul {
+      float: left; }
+    footer .footer-top li {
+      float: left;
+      width: 160px;
+      margin-left: 20px;
+      box-sizing: border-box;
+      border-right: 1px solid #fff; }
+      footer .footer-top li h5 {
+        color: #b5b5b5; }
+      footer .footer-top li p a {
+        float: left;
+        margin-top: 8px;
+        margin-right: 25px; }
+    footer .footer-top li:first-of-type {
+      margin-left: 0; }
+    footer .footer-top .ac-girl {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #fff;
+      padding: 10px; }
+      footer .footer-top .ac-girl img {
+        width: 70px;
+        height: 60px; }
+    footer .footer-top .download {
+      width: 106px; }
+    footer .footer-top .feedback {
+      width: 196px; }
+  footer .footer-main p {
+    float: left;
+    width: 214px;
+    margin-bottom: 10px;
+    color: #cccccc; }
+  footer .footer-bottom {
+    text-align: center; }
+    footer .footer-bottom img {
+      margin-bottom: 16px; }
+    footer .footer-bottom p {
+      padding-bottom: 16px;
+      color: #cccccc; }
 
 /*# sourceMappingURL=acfun.css.map */
