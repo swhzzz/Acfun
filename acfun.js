@@ -115,7 +115,7 @@ function autoPlay() { //自动播放
         playNext(1)
     }, 3000)
 }
-$('.carousel').find('img').onload = autoPlay()
+$('.carousel').find('img').onload = autoPlay
 
 
 
