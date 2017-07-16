@@ -106,22 +106,23 @@ $('.videoList').on('mouseleave', 'li', function() {
 })
 
 
-//banna-rank-video-list 
-$('#week-rank').on('click', function() {
-    $('#day-rank').removeClass('active')
-    $('#week-rank').addClass('active')
-    console.log($('.column-left>.video-list'))
-    $('.column-left .video-list').removeClass('active')
-    $('.column-left .video-list').eq(1).addClass('active')
+//video-list 
+$('.banna-rank .rank-type').on('click', 'li', function() {
+    $(this).siblings().removeClass('active')
+    $(this).addClass('active')
+    let pos = $(this).index()
+    $('.banna-rank .video-list').removeClass('active')
+    $('.banna-rank .video-list').eq(pos).addClass('active')
+})
+$('.entertainment-rank .rank-type').on('click', 'li', function() {
+    $(this).siblings().removeClass('active')
+    $(this).addClass('active')
+    let pos = $(this).index()
+    $('.entertainment-rank .rank-list').removeClass('active')
+    $('.entertainment-rank .rank-list').eq(pos).addClass('active')
 
 })
 
-$('#day-rank').on('click', function() {
-    $('#week-rank').removeClass('active')
-    $('#day-rank').addClass('active')
-    $('.column-left .video-list').removeClass('active')
-    $('.column-left .video-list').eq(0).addClass('active')
-})
 
 //article-img-intro
 

@@ -23,6 +23,7 @@
 }
 
 .icon-refresh:before {
+    font-size: 12px;
     content: "\e62b";
 }
 

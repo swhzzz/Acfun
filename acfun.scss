@@ -35,11 +35,17 @@ i {
     font-style: normal;
 }
 
-button {
-    border-style: none;
+img {
+    vertical-align: top;
 }
 
-input {
+button {
+    border-style: none;
+    cursor: pointer;
+}
+
+input,
+button {
     outline: none;
 }
 
@@ -47,6 +53,13 @@ input {
     display: block;
     content: '';
     clear: both;
+}
+
+.middle:after {
+    content: '';
+    display: inline-block;
+    visibility: hidden;
+    vertical-align: middle;
 }
 
 .center {
@@ -61,7 +74,7 @@ input {
 // }
 // .column-right {
 //     float: right;
-//     position: absolute;
+//     // position: absolute;
 //     margin-left: 20px;
 //     width: 260px;
 // }
@@ -556,22 +569,224 @@ header {
             p:hover {
                 color: $theme-green;
             }
-            .view-more {
-                position: absolute;
-                bottom: 0;
-                display: inline-block;
-                height: 28px;
-                width: 260px;
-                line-height: 28px;
-                text-align: center;
+        }
+    }
+}
+
+.entertainment {
+    .column-left {
+        float: left;
+        width: 700px;
+        margin-top: 40px;
+        h2 {
+            img {
+                vertical-align: middle;
+                width: 40px;
+            }
+            span {
+                margin-left: 10px;
+            }
+            button {
+                padding: 2px 6px;
+                border: 1px solid $theme-grey2;
                 border-radius: 4px;
+                margin-left: 10px;
+                background-color: #fff;
+                vertical-align: middle;
+            }
+            button:hover {
                 background-color: $theme-grey;
             }
-            .view-more:hover {
-                background-color: rgb(228, 228, 228);
+            .title-right {
+                font-size: 12px;
+                float: right;
+                margin-top: 10px;
+                a {
+                    cursor: pointer;
+                    margin-right: 10px;
+                }
+                a:hover {
+                    color: $theme-red;
+                }
+                .more {
+                    color: $theme-red;
+                }
+            }
+        }
+        .video-list {
+            margin-left: -20px;
+            margin-top: -20px;
+            li {
+                float: left;
+                margin-left: 20px;
+                margin-top: 20px;
+                width: 160px;
+                img {
+                    vertical-align: top;
+                    width: 160px;
+                    height: 90px;
+                    cursor: pointer;
+                }
+                h4 {
+                    position: relative;
+                    overflow: hidden;
+                    cursor: pointer;
+                    margin-top: 5px;
+                    i {
+                        font-size: 12px;
+                    }
+                    b {
+                        font-size: 12px;
+                        margin-left: 40px;
+                    }
+                }
+                p {
+                    width: 160px;
+                    margin-top: 5px;
+                    position: absolute;
+                    background-color: #fff;
+                    bottom: 0;
+                    color: $theme-grey2;
+                    transition: all .5s;
+                }
+                h4:hover {
+                    color: $theme-red;
+                    p {
+                        bottom: -20px;
+                    }
+                }
+            }
+            .first-video {
+                width: 340px;
+                img {
+                    width: 340px;
+                    height: 240px;
+                    vertical-align: top;
+                }
+                p {
+                    position: static;
+                    margin-top: 2px;
+                }
+            }
+        }
+    }
+    .column-right {
+        float: right;
+        width: 260px;
+        margin-top: 50px;
+        margin-left: 20px;
+        .entertainment-rank {
+            position: relative;
+            .rank-type {
+                position: relative;
+                ul {
+                    position: absolute;
+                    top: 3px;
+                    right: 0;
+                    li {
+                        float: left;
+                        padding: 2px 10px;
+                        cursor: pointer;
+                    }
+                    .active {
+                        color: $theme-red;
+                        background-color: rgb(248, 231, 232);
+                    }
+                }
+            }
+            .active {
+                display: block;
             }
         }
     }
 }
 
-// }
+.rank-list {
+    display: none;
+    margin-top: 12px;
+    height: 423px;
+    li+li {
+        margin-top: 15px;
+    }
+    p {
+        height: 14px;
+        overflow: hidden;
+        span {
+            color: $theme-grey2;
+            margin-left: 5px;
+            margin-right: 10px;
+        }
+    }
+    a:hover {
+        color: $theme-red;
+    }
+    img {
+        float: left;
+        width: 90px;
+        height: 50px;
+    }
+    div {
+        float: right;
+        width: 154px;
+        h5 {
+            height: 20px;
+            overflow: hidden;
+        }
+        i {
+            float: left;
+            color: $theme-grey2;
+            font-size: 12px;
+        }
+        b {
+            float: right;
+            color: $theme-grey2;
+            font-size: 12px;
+        }
+    }
+}
+
+.img-recommend {
+    position: relative;
+    span {
+        position: absolute;
+        width: 36px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+        top: 72px;
+        left: 0;
+        color: #fff;
+        background-color: $theme-red;
+    }
+}
+
+.img-li {
+    position: relative;
+    span {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        text-align: center;
+        top: 0;
+        left: 0;
+        color: #fff;
+        background-color: $theme-red;
+    }
+}
+
+.view-more {
+    position: absolute;
+    bottom: 0;
+    display: inline-block;
+    height: 28px;
+    width: 260px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 4px;
+    background-color: rgb(228, 228, 228);
+}
+
+.view-more:hover {
+    background-color: rgb(191, 190, 188);
+}

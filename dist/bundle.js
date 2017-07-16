@@ -179,22 +179,23 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.videoList').on('mouseleave', 'l
 })
 
 
-//banna-rank-video-list 
-__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#week-rank').on('click', function() {
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#day-rank').removeClass('active')
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#week-rank').addClass('active')
-    console.log(__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.column-left>.video-list'))
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.column-left .video-list').removeClass('active')
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.column-left .video-list').eq(1).addClass('active')
+//video-list 
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.banna-rank .rank-type').on('click', 'li', function() {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).siblings().removeClass('active')
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).addClass('active')
+    let pos = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).index()
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.banna-rank .video-list').removeClass('active')
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.banna-rank .video-list').eq(pos).addClass('active')
+})
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.entertainment-rank .rank-type').on('click', 'li', function() {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).siblings().removeClass('active')
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).addClass('active')
+    let pos = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).index()
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.entertainment-rank .rank-list').removeClass('active')
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.entertainment-rank .rank-list').eq(pos).addClass('active')
 
 })
 
-__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#day-rank').on('click', function() {
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#week-rank').removeClass('active')
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#day-rank').addClass('active')
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.column-left .video-list').removeClass('active')
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.column-left .video-list').eq(0).addClass('active')
-})
 
 //article-img-intro
 
