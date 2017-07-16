@@ -179,7 +179,7 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.videoList').on('mouseleave', 'l
 })
 
 
-//video-list 
+//video-list rank-list
 __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.banna-rank .rank-type').on('click', 'li', function() {
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).siblings().removeClass('active')
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).addClass('active')
@@ -195,7 +195,22 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.entertainment-rank .rank-type')
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.entertainment-rank .rank-list').eq(pos).addClass('active')
 
 })
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.game-rank .rank-type').on('click', 'li', function() {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).siblings().removeClass('active')
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).addClass('active')
+    let pos = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).index()
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.game-rank .rank-list').removeClass('active')
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.game-rank .rank-list').eq(pos).addClass('active')
 
+})
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.commic-rank .rank-type').on('click', 'li', function() {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).siblings().removeClass('active')
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).addClass('active')
+    let pos = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).index()
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.commic-rank .rank-list').removeClass('active')
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.commic-rank .rank-list').eq(pos).addClass('active')
+
+})
 
 //article-img-intro
 

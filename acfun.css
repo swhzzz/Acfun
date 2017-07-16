@@ -270,9 +270,11 @@ header nav {
     .monkey-recommend h2 img {
       width: 40px;
       vertical-align: middle; }
-    .monkey-recommend h2 i {
+    .monkey-recommend h2 a i {
       font-style: inherit;
       margin-left: 5px; }
+    .monkey-recommend h2 a:hover {
+      color: #f84962; }
     .monkey-recommend h2 b {
       margin-left: 10px;
       font-weight: normal;
@@ -312,9 +314,11 @@ header nav {
       .banna-rank .column-left h2 img {
         width: 40px;
         vertical-align: middle; }
-      .banna-rank .column-left h2 i {
+      .banna-rank .column-left h2 a i {
         font-style: inherit;
         margin-left: 5px; }
+      .banna-rank .column-left h2 a:hover {
+        color: #f84962; }
       .banna-rank .column-left h2 b {
         margin-left: 10px;
         font-weight: normal;
@@ -347,8 +351,7 @@ header nav {
         font-weight: normal; }
         .banna-rank .column-left .video-list li a img {
           width: 160px;
-          height: 90px;
-          vertical-align: top; }
+          height: 90px; }
         .banna-rank .column-left .video-list li a h4 {
           height: 20px;
           overflow: hidden;
@@ -383,6 +386,8 @@ header nav {
     .banna-rank .column-right img {
       width: 40px;
       vertical-align: middle; }
+    .banna-rank .column-right h2 a:hover {
+      color: #f84962; }
     .banna-rank .column-right .article-type {
       margin-top: 7px;
       display: flex;
@@ -433,59 +438,61 @@ header nav {
       .banna-rank .column-right .article-list p:hover {
         color: #2ab69d; }
 
-.entertainment .column-left {
+.column-left {
   float: left;
   width: 700px;
   margin-top: 40px; }
-  .entertainment .column-left h2 img {
+  .column-left h2 img {
     vertical-align: middle;
     width: 40px; }
-  .entertainment .column-left h2 span {
+  .column-left h2 a {
     margin-left: 10px; }
-  .entertainment .column-left h2 button {
+  .column-left h2 a:hover {
+    color: #f84962; }
+  .column-left h2 button {
     padding: 2px 6px;
     border: 1px solid #9c9999;
     border-radius: 4px;
     margin-left: 10px;
     background-color: #fff;
     vertical-align: middle; }
-  .entertainment .column-left h2 button:hover {
+  .column-left h2 button:hover {
     background-color: #e2e2e2; }
-  .entertainment .column-left h2 .title-right {
+  .column-left h2 .title-right {
     font-size: 12px;
     float: right;
     margin-top: 10px; }
-    .entertainment .column-left h2 .title-right a {
+    .column-left h2 .title-right a {
       cursor: pointer;
       margin-right: 10px; }
-    .entertainment .column-left h2 .title-right a:hover {
+    .column-left h2 .title-right a:hover {
       color: #f84962; }
-    .entertainment .column-left h2 .title-right .more {
+    .column-left h2 .title-right .more {
       color: #f84962; }
-  .entertainment .column-left .video-list {
+  .column-left .video-list {
     margin-left: -20px;
     margin-top: -20px; }
-    .entertainment .column-left .video-list li {
+    .column-left .video-list li {
       float: left;
       margin-left: 20px;
       margin-top: 20px;
       width: 160px; }
-      .entertainment .column-left .video-list li img {
+      .column-left .video-list li img {
         vertical-align: top;
         width: 160px;
         height: 90px;
         cursor: pointer; }
-      .entertainment .column-left .video-list li h4 {
+      .column-left .video-list li h4 {
         position: relative;
         overflow: hidden;
         cursor: pointer;
         margin-top: 5px; }
-        .entertainment .column-left .video-list li h4 i {
+        .column-left .video-list li h4 i {
           font-size: 12px; }
-        .entertainment .column-left .video-list li h4 b {
+        .column-left .video-list li h4 b {
           font-size: 12px;
           margin-left: 40px; }
-      .entertainment .column-left .video-list li p {
+      .column-left .video-list li p {
         width: 160px;
         margin-top: 5px;
         position: absolute;
@@ -493,40 +500,44 @@ header nav {
         bottom: 0;
         color: #9c9999;
         transition: all .5s; }
-      .entertainment .column-left .video-list li h4:hover {
+      .column-left .video-list li h4:hover {
         color: #f84962; }
-        .entertainment .column-left .video-list li h4:hover p {
+        .column-left .video-list li h4:hover p {
           bottom: -20px; }
-    .entertainment .column-left .video-list .first-video {
+    .column-left .video-list .first-video {
       width: 340px; }
-      .entertainment .column-left .video-list .first-video img {
+      .column-left .video-list .first-video img {
         width: 340px;
         height: 240px;
         vertical-align: top; }
-      .entertainment .column-left .video-list .first-video p {
+      .column-left .video-list .first-video p {
         position: static;
+        width: 340px;
         margin-top: 2px; }
-.entertainment .column-right {
+
+.column-right {
   float: right;
   width: 260px;
   margin-top: 50px;
   margin-left: 20px; }
-  .entertainment .column-right .entertainment-rank {
+  .column-right .rank {
     position: relative; }
-    .entertainment .column-right .entertainment-rank .rank-type {
+    .column-right .rank .rank-type {
       position: relative; }
-      .entertainment .column-right .entertainment-rank .rank-type ul {
+      .column-right .rank .rank-type h2 a:hover {
+        color: #f84962; }
+      .column-right .rank .rank-type ul {
         position: absolute;
         top: 3px;
         right: 0; }
-        .entertainment .column-right .entertainment-rank .rank-type ul li {
+        .column-right .rank .rank-type ul li {
           float: left;
           padding: 2px 10px;
           cursor: pointer; }
-        .entertainment .column-right .entertainment-rank .rank-type ul .active {
+        .column-right .rank .rank-type ul .active {
           color: #f84962;
           background-color: #f8e7e8; }
-    .entertainment .column-right .entertainment-rank .active {
+    .column-right .rank .active {
       display: block; }
 
 .rank-list {
@@ -554,6 +565,8 @@ header nav {
     .rank-list div h5 {
       height: 20px;
       overflow: hidden; }
+    .rank-list div p {
+      color: #9c9999; }
     .rank-list div i {
       float: left;
       color: #9c9999;

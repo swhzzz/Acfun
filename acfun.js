@@ -106,7 +106,7 @@ $('.videoList').on('mouseleave', 'li', function() {
 })
 
 
-//video-list 
+//video-list rank-list
 $('.banna-rank .rank-type').on('click', 'li', function() {
     $(this).siblings().removeClass('active')
     $(this).addClass('active')
@@ -122,7 +122,22 @@ $('.entertainment-rank .rank-type').on('click', 'li', function() {
     $('.entertainment-rank .rank-list').eq(pos).addClass('active')
 
 })
+$('.game-rank .rank-type').on('click', 'li', function() {
+    $(this).siblings().removeClass('active')
+    $(this).addClass('active')
+    let pos = $(this).index()
+    $('.game-rank .rank-list').removeClass('active')
+    $('.game-rank .rank-list').eq(pos).addClass('active')
 
+})
+$('.commic-rank .rank-type').on('click', 'li', function() {
+    $(this).siblings().removeClass('active')
+    $(this).addClass('active')
+    let pos = $(this).index()
+    $('.commic-rank .rank-list').removeClass('active')
+    $('.commic-rank .rank-list').eq(pos).addClass('active')
+
+})
 
 //article-img-intro
 
