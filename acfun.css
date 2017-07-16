@@ -60,17 +60,17 @@ button {
       width: 40px; }
     .column-left h2 a {
       margin-left: 10px; }
-    .column-left h2 a:hover {
-      color: #f84962; }
+      .column-left h2 a:hover {
+        color: #f84962; }
     .column-left h2 button {
       padding: 2px 6px;
-      border: 1px solid #9c9999;
+      border: 1px solid #e2e2e2;
       border-radius: 4px;
       margin-left: 10px;
       background-color: #fff;
       vertical-align: middle; }
-    .column-left h2 button:hover {
-      background-color: #e2e2e2; }
+      .column-left h2 button:hover {
+        background-color: #e2e2e2; }
     .column-left h2 .title-right {
       position: absolute;
       right: 0;
@@ -80,8 +80,8 @@ button {
       .column-left h2 .title-right a {
         cursor: pointer;
         margin-right: 10px; }
-      .column-left h2 .title-right a:hover {
-        color: #f84962; }
+        .column-left h2 .title-right a:hover {
+          color: #f84962; }
       .column-left h2 .title-right .more {
         color: #f84962; }
   .column-left .video-list {
@@ -107,6 +107,10 @@ button {
         .column-left .video-list li h4 b {
           font-size: 12px;
           margin-left: 40px; }
+        .column-left .video-list li h4:hover {
+          color: #f84962; }
+          .column-left .video-list li h4:hover p {
+            bottom: -20px; }
       .column-left .video-list li p {
         width: 160px;
         margin-top: 5px;
@@ -115,10 +119,6 @@ button {
         bottom: 0;
         color: #9c9999;
         transition: all .5s; }
-      .column-left .video-list li h4:hover {
-        color: #f84962; }
-        .column-left .video-list li h4:hover p {
-          bottom: -20px; }
     .column-left .video-list .first-video {
       width: 340px;
       height: 270px; }
@@ -230,9 +230,8 @@ button {
   text-align: center;
   border-radius: 4px;
   background-color: #e4e4e4; }
-
-.view-more:hover {
-  background-color: #bfbebc; }
+  .view-more:hover {
+    background-color: #bfbebc; }
 
 .nav-fixed {
   position: fixed;
@@ -267,8 +266,8 @@ header .wrap {
       header .wrap .header-top .game-center a {
         font-size: 12px;
         vertical-align: bottom; }
-      header .wrap .header-top .game-center a:hover {
-        color: #f84962; }
+        header .wrap .header-top .game-center a:hover {
+          color: #f84962; }
     header .wrap .header-top .download {
       float: right;
       margin-top: 10px; }
@@ -277,8 +276,8 @@ header .wrap {
       header .wrap .header-top .download a {
         font-size: 12px;
         vertical-align: bottom; }
-      header .wrap .header-top .download a:hover {
-        color: #f84962; }
+        header .wrap .header-top .download a:hover {
+          color: #f84962; }
     header .wrap .header-top .search {
       position: absolute;
       left: 50%;
@@ -310,8 +309,8 @@ header .wrap {
         margin-left: 21px; }
         header .wrap .header-top .user li i {
           color: #909699; }
-        header .wrap .header-top .user li i:hover {
-          color: #f84962; }
+          header .wrap .header-top .user li i:hover {
+            color: #f84962; }
       header .wrap .header-top .user li:last-of-type {
         margin-top: 5px; }
       header .wrap .header-top .user a:hover {
@@ -322,6 +321,28 @@ header .header-banner {
   margin-top: 47px;
   background: url("src/pic/banner.jpg") no-repeat center top;
   background-size: cover; }
+  header .header-banner .bubble {
+    position: absolute;
+    display: none;
+    height: 24px;
+    line-height: 24px;
+    padding: 8px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #fff; }
+    header .header-banner .bubble:after {
+      content: '';
+      position: absolute;
+      top: 14px;
+      left: -6px;
+      width: 12px;
+      height: 12px;
+      transform: rotate(135deg);
+      background-color: #fff; }
+  header .header-banner .active {
+    display: block; }
+  header .header-banner:hover {
+    cursor: pointer; }
 header nav {
   position: relative;
   height: 46px;
@@ -548,8 +569,8 @@ header nav {
           height: 20px;
           overflow: hidden;
           margin-top: 5px; }
-        .banna-rank .column-left .video-list li a h4:hover {
-          color: #f84962; }
+          .banna-rank .column-left .video-list li a h4:hover {
+            color: #f84962; }
         .banna-rank .column-left .video-list li a span {
           float: left;
           width: 106px;
@@ -558,8 +579,8 @@ header nav {
           overflow: hidden;
           text-overflow: ellipsis;
           color: #9c9999; }
-        .banna-rank .column-left .video-list li a span:hover {
-          color: #f84962; }
+          .banna-rank .column-left .video-list li a span:hover {
+            color: #f84962; }
         .banna-rank .column-left .video-list li a i {
           margin-top: 2px;
           float: right;
@@ -627,8 +648,8 @@ header nav {
         overflow: hidden;
         height: 16px;
         line-height: 20px; }
-      .banna-rank .column-right .article-list p:hover {
-        color: #2ab69d; }
+        .banna-rank .column-right .article-list p:hover {
+          color: #2ab69d; }
 
 .ads {
   margin-top: 40px; }

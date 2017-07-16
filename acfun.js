@@ -2,14 +2,28 @@ import $ from 'jquery'
 window.$ = $
 
 
-// $(window).scrollTop(0, 279)
-
 $(window).on('scroll', function() {
     if ($(window).scrollTop() > 179) {
         $('nav').addClass('nav-fixed')
     } else {
         $('nav').removeClass('nav-fixed')
     }
+})
+
+$('.header-banner').on('mousemove', function(e) {
+    var x = e.clientX
+    var y = e.clientY
+    if (y > 188 || y < 60 || x > 950) {
+        $('.bubble').removeClass('active')
+    } else {
+        $('.bubble').css({
+            left: x + 20,
+            top: y
+        })
+        $('.bubble').addClass('active')
+    }
+    console.log(x, y)
+
 })
 
 //nav
@@ -22,6 +36,9 @@ navList.on('mouseleave', function(e) {
     let moreGroupBg = $('.moreGroupBg:first')
     moreGroupBg.hide()
 })
+
+
+
 
 
 
@@ -185,7 +202,7 @@ $('.sports-rank .rank-type').on('click', 'li', function() {
 
 })
 
-//article-img-intro
+//article-list
 
 $('.article-type').on('mouseenter', 'li', function() {
     $(this).siblings().removeClass('active')

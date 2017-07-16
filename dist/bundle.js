@@ -75,14 +75,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 window.$ = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a
 
 
-// $(window).scrollTop(0, 279)
-
 __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(window).on('scroll', function() {
     if (__WEBPACK_IMPORTED_MODULE_0_jquery___default.a(window).scrollTop() > 179) {
         __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('nav').addClass('nav-fixed')
     } else {
         __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('nav').removeClass('nav-fixed')
     }
+})
+
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.header-banner').on('mousemove', function(e) {
+    var x = e.clientX
+    var y = e.clientY
+    if (y > 188 || y < 60 || x > 950) {
+        __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.bubble').removeClass('active')
+    } else {
+        __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.bubble').css({
+            left: x + 20,
+            top: y
+        })
+        __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.bubble').addClass('active')
+    }
+    console.log(x, y)
+
 })
 
 //nav
@@ -95,6 +109,9 @@ navList.on('mouseleave', function(e) {
     let moreGroupBg = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.moreGroupBg:first')
     moreGroupBg.hide()
 })
+
+
+
 
 
 
@@ -258,7 +275,7 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.sports-rank .rank-type').on('cl
 
 })
 
-//article-img-intro
+//article-list
 
 __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.article-type').on('mouseenter', 'li', function() {
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).siblings().removeClass('active')

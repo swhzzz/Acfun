@@ -78,20 +78,20 @@ button {
         }
         a {
             margin-left: 10px;
-        }
-        a:hover {
-            color: $theme-red;
+            &:hover {
+                color: $theme-red;
+            }
         }
         button {
             padding: 2px 6px;
-            border: 1px solid $theme-grey2;
+            border: 1px solid $theme-grey;
             border-radius: 4px;
             margin-left: 10px;
             background-color: #fff;
             vertical-align: middle;
-        }
-        button:hover {
-            background-color: $theme-grey;
+            &:hover {
+                background-color: $theme-grey;
+            }
         }
         .title-right {
             position: absolute;
@@ -102,9 +102,9 @@ button {
             a {
                 cursor: pointer;
                 margin-right: 10px;
-            }
-            a:hover {
-                color: $theme-red;
+                &:hover {
+                    color: $theme-red;
+                }
             }
             .more {
                 color: $theme-red;
@@ -137,6 +137,12 @@ button {
                     font-size: 12px;
                     margin-left: 40px;
                 }
+                &:hover {
+                    color: $theme-red;
+                    p {
+                        bottom: -20px;
+                    }
+                }
             }
             p {
                 width: 160px;
@@ -146,12 +152,6 @@ button {
                 bottom: 0;
                 color: $theme-grey2;
                 transition: all .5s;
-            }
-            h4:hover {
-                color: $theme-red;
-                p {
-                    bottom: -20px;
-                }
             }
         }
         .first-video {
@@ -296,10 +296,9 @@ button {
     text-align: center;
     border-radius: 4px;
     background-color: rgb(228, 228, 228);
-}
-
-.view-more:hover {
-    background-color: rgb(191, 190, 188);
+    &:hover {
+        background-color: rgb(191, 190, 188);
+    }
 }
 
 .nav-fixed {
@@ -339,9 +338,9 @@ header {
                 a {
                     font-size: 12px;
                     vertical-align: bottom;
-                }
-                a:hover {
-                    color: $theme-red;
+                    &:hover {
+                        color: $theme-red;
+                    }
                 }
             }
             .download {
@@ -353,9 +352,9 @@ header {
                 a {
                     font-size: 12px;
                     vertical-align: bottom;
-                }
-                a:hover {
-                    color: $theme-red;
+                    &:hover {
+                        color: $theme-red;
+                    }
                 }
             }
             .search {
@@ -392,9 +391,9 @@ header {
                     margin-left: 21px;
                     i {
                         color: rgb(144, 150, 153);
-                    }
-                    i:hover {
-                        color: $theme-red;
+                        &:hover {
+                            color: $theme-red;
+                        }
                     }
                 }
                 li:last-of-type {
@@ -412,6 +411,32 @@ header {
         margin-top: 47px;
         background: url('src/pic/banner.jpg') no-repeat center top;
         background-size: cover;
+        .bubble {
+            position: absolute;
+            display: none;
+            height: 24px;
+            line-height: 24px;
+            padding: 8px;
+            text-align: center;
+            border-radius: 5px;
+            background-color: #fff;
+            &:after {
+                content: '';
+                position: absolute;
+                top: 14px;
+                left: -6px;
+                width: 12px;
+                height: 12px;
+                transform: rotate(135deg);
+                background-color: #fff;
+            }
+        }
+        .active {
+            display: block;
+        }
+        &:hover {
+            cursor: pointer;
+        }
     }
     nav {
         position: relative;
@@ -591,9 +616,9 @@ header {
                 font-style: inherit;
                 margin-left: 5px;
             }
-        }
-        a:hover {
-            color: $theme-red;
+            &:hover {
+                color: $theme-red;
+            }
         }
         b {
             margin-left: 10px;
@@ -657,9 +682,9 @@ header {
                     font-style: inherit;
                     margin-left: 5px;
                 }
-            }
-            a:hover {
-                color: $theme-red;
+                &:hover {
+                    color: $theme-red;
+                }
             }
             b {
                 margin-left: 10px;
@@ -705,9 +730,9 @@ header {
                         height: 20px;
                         overflow: hidden;
                         margin-top: 5px;
-                    }
-                    h4:hover {
-                        color: $theme-red;
+                        &:hover {
+                            color: $theme-red;
+                        }
                     }
                     span {
                         float: left;
@@ -717,9 +742,9 @@ header {
                         overflow: hidden;
                         text-overflow: ellipsis;
                         color: $theme-grey2;
-                    }
-                    span:hover {
-                        color: $theme-red;
+                        &:hover {
+                            color: $theme-red;
+                        }
                     }
                     i {
                         margin-top: 2px;
@@ -811,9 +836,9 @@ header {
                 overflow: hidden;
                 height: 16px;
                 line-height: 20px;
-            }
-            p:hover {
-                color: $theme-green;
+                &:hover {
+                    color: $theme-green;
+                }
             }
         }
     }
