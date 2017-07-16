@@ -121,6 +121,7 @@ $imgs.each(function() {
 });
 $.when.apply(null, defereds).done(function() {
     console.log('load compeleted');
+    autoPlay()
 });
 
 

@@ -194,6 +194,7 @@ $imgs.each(function() {
 });
 __WEBPACK_IMPORTED_MODULE_0_jquery___default.a.when.apply(null, defereds).done(function() {
     console.log('load compeleted');
+    autoPlay()
 });
 
 
