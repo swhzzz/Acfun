@@ -75,9 +75,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 window.$ = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a
 
 
+// $(window).scrollTop(0, 279)
 
-
-
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a(window).on('scroll', function() {
+    if (__WEBPACK_IMPORTED_MODULE_0_jquery___default.a(window).scrollTop() > 179) {
+        __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('nav').addClass('nav-fixed')
+    } else {
+        __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('nav').removeClass('nav-fixed')
+    }
+})
 
 //nav
 let navList = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('nav>ul:first')

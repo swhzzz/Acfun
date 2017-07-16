@@ -302,6 +302,13 @@ button {
     background-color: rgb(191, 190, 188);
 }
 
+.nav-fixed {
+    position: fixed;
+    top: 45px;
+    z-index: 50;
+    width: 100%;
+}
+
 header {
     .wrap {
         position: fixed;
@@ -409,6 +416,7 @@ header {
     nav {
         position: relative;
         height: 46px;
+        background-color: #fff;
         border-bottom: 1px solid #eee;
         ul {
             position: relative;

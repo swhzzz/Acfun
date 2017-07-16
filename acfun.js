@@ -2,9 +2,15 @@ import $ from 'jquery'
 window.$ = $
 
 
+// $(window).scrollTop(0, 279)
 
-
-
+$(window).on('scroll', function() {
+    if ($(window).scrollTop() > 179) {
+        $('nav').addClass('nav-fixed')
+    } else {
+        $('nav').removeClass('nav-fixed')
+    }
+})
 
 //nav
 let navList = $('nav>ul:first')
