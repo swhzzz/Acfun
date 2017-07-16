@@ -111,7 +111,17 @@ function autoPlay() { //自动播放
         playNext(1)
     }, 3000)
 }
-autoPlay()
+var defereds = [];
+$imgs = $('.carousel>img')
+$imgs.each(function() {
+    var dfd = $.Deferred();
+
+    $(this).load(dfd.resolve);
+    defereds.push(dfd);
+});
+$.when.apply(null, defereds).done(function() {
+    console.log('load compeleted');
+});
 
 
 //videoIntro

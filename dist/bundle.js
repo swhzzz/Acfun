@@ -184,7 +184,17 @@ function autoPlay() { //自动播放
         playNext(1)
     }, 3000)
 }
-autoPlay()
+var defereds = [];
+$imgs = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.carousel>img')
+$imgs.each(function() {
+    var dfd = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a.Deferred();
+
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).load(dfd.resolve);
+    defereds.push(dfd);
+});
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a.when.apply(null, defereds).done(function() {
+    console.log('load compeleted');
+});
 
 
 //videoIntro
