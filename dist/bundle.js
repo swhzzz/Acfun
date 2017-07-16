@@ -185,7 +185,7 @@ function autoPlay() { //自动播放
         playNext(1)
     }, 3000)
 }
-var imgs = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.carousel').find('img').on('load', function() {
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.carousel>img').on('load', function() {
     autoPlay()
 })
 

@@ -112,7 +112,7 @@ function autoPlay() { //自动播放
         playNext(1)
     }, 3000)
 }
-var imgs = $('.carousel').find('img').on('load', function() {
+$('.carousel>img').on('load', function() {
     autoPlay()
 })
 
