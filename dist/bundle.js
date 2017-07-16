@@ -185,7 +185,7 @@ function autoPlay() { //自动播放
     }, 3000)
 }
 var defereds = [];
-$imgs = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.carousel>img')
+var $imgs = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.carousel>img')
 $imgs.each(function() {
     var dfd = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a.Deferred();
 

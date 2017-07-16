@@ -112,7 +112,7 @@ function autoPlay() { //自动播放
     }, 3000)
 }
 var defereds = [];
-$imgs = $('.carousel>img')
+var $imgs = $('.carousel>img')
 $imgs.each(function() {
     var dfd = $.Deferred();
 
