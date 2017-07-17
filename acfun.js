@@ -2,6 +2,31 @@ import $ from 'jquery'
 window.$ = $
 
 
+// search part
+$('#search-input').on('focus', () => {
+    $('#hot-search').css('display', 'block')
+})
+$('#search-input').on('blur', () => {
+    $('#hot-search').css('display', 'none')
+})
+$('#search-input').on('keypress', function(e) {
+    if (e.keyCode === 13) {
+        startSearch()
+    }
+})
+$('.icon-search').on('click', function() {
+    startSearch()
+})
+
+function startSearch() {
+    let value = $('#search-input').val()
+    if (value === '') {
+        console.log(1)
+        value = $('#search-input').attr('placeholder')
+    }
+    window.open('http://www.acfun.cn/search/?#query=' + value)
+}
+
 $(window).on('scroll', function() {
     if ($(window).scrollTop() > 179) {
         $('nav').addClass('nav-fixed')
@@ -18,7 +43,7 @@ $('.header-banner').on('mousemove', function(e) {
     } else {
         $('.bubble').css({
             left: x + 20,
-            top: y
+            top: y - 10
         })
         $('.bubble').addClass('active')
     }

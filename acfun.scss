@@ -382,6 +382,41 @@ header {
                     border-radius: 0 5px 5px 0;
                     cursor: pointer;
                 }
+                #hot-search {
+                    position: absolute;
+                    display: none;
+                    top: 100%;
+                    width: 100%;
+                    background-color: #f8f8f8;
+                    opacity: 0.9;
+                    z-index: 500;
+                }
+                .today-hot-search {
+                    h4 {
+                        text-align: left;
+                        color: $font-grey;
+                        padding: 8px 16px;
+                        border-bottom: 1px solid $theme-grey;
+                    }
+                    ul {
+                        padding: 0 16px;
+                        li {
+                            text-align: left;
+                            padding: 8px 0;
+                            color: $font-grey;
+                            &:hover {
+                                color: $theme-red;
+                                background-color: rgba(248, 73, 98, .1);
+                            }
+                        }
+                    }
+                    .hot-top3 {
+                        color: $theme-red;
+                    }
+                    i {
+                        margin-right: 10px;
+                    }
+                }
             }
             .user {
                 float: right;

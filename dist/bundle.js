@@ -75,6 +75,31 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 window.$ = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a
 
 
+// search part
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').on('focus', () => {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#hot-search').css('display', 'block')
+})
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').on('blur', () => {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#hot-search').css('display', 'none')
+})
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').on('keypress', function(e) {
+    if (e.keyCode === 13) {
+        startSearch()
+    }
+})
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.icon-search').on('click', function() {
+    startSearch()
+})
+
+function startSearch() {
+    let value = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').val()
+    if (value === '') {
+        console.log(1)
+        value = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').attr('placeholder')
+    }
+    window.open('http://www.acfun.cn/search/?#query=' + value)
+}
+
 __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(window).on('scroll', function() {
     if (__WEBPACK_IMPORTED_MODULE_0_jquery___default.a(window).scrollTop() > 179) {
         __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('nav').addClass('nav-fixed')
@@ -91,7 +116,7 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.header-banner').on('mousemove',
     } else {
         __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.bubble').css({
             left: x + 20,
-            top: y
+            top: y - 10
         })
         __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.bubble').addClass('active')
     }

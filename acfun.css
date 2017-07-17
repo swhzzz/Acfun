@@ -301,6 +301,32 @@ header .wrap {
         margin-left: -1px;
         border-radius: 0 5px 5px 0;
         cursor: pointer; }
+      header .wrap .header-top .search #hot-search {
+        position: absolute;
+        display: none;
+        top: 100%;
+        width: 100%;
+        background-color: #f8f8f8;
+        opacity: 0.9;
+        z-index: 500; }
+      header .wrap .header-top .search .today-hot-search h4 {
+        text-align: left;
+        color: #999;
+        padding: 8px 16px;
+        border-bottom: 1px solid #e2e2e2; }
+      header .wrap .header-top .search .today-hot-search ul {
+        padding: 0 16px; }
+        header .wrap .header-top .search .today-hot-search ul li {
+          text-align: left;
+          padding: 8px 0;
+          color: #999; }
+          header .wrap .header-top .search .today-hot-search ul li:hover {
+            color: #f84962;
+            background-color: rgba(248, 73, 98, 0.1); }
+      header .wrap .header-top .search .today-hot-search .hot-top3 {
+        color: #f84962; }
+      header .wrap .header-top .search .today-hot-search i {
+        margin-right: 10px; }
     header .wrap .header-top .user {
       float: right;
       margin-top: 10px; }
