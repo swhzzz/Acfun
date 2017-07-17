@@ -169,72 +169,16 @@ $('.banna-rank .rank-type').on('click', 'li', function() {
     $('.banna-rank .video-list').removeClass('active')
     $('.banna-rank .video-list').eq(pos).addClass('active')
 })
-$('.entertainment-rank .rank-type').on('click', 'li', function() {
-    $(this).siblings().removeClass('active')
-    $(this).addClass('active')
-    let pos = $(this).index()
-    $('.entertainment-rank .rank-list').removeClass('active')
-    $('.entertainment-rank .rank-list').eq(pos).addClass('active')
 
-})
-$('.game-rank .rank-type').on('click', 'li', function() {
-    $(this).siblings().removeClass('active')
-    $(this).addClass('active')
-    let pos = $(this).index()
-    $('.game-rank .rank-list').removeClass('active')
-    $('.game-rank .rank-list').eq(pos).addClass('active')
-
-})
-$('.commic-rank .rank-type').on('click', 'li', function() {
-    $(this).siblings().removeClass('active')
-    $(this).addClass('active')
-    let pos = $(this).index()
-    $('.commic-rank .rank-list').removeClass('active')
-    $('.commic-rank .rank-list').eq(pos).addClass('active')
-
-})
-$('.music-rank .rank-type').on('click', 'li', function() {
-    $(this).siblings().removeClass('active')
-    $(this).addClass('active')
-    let pos = $(this).index()
-    $('.music-rank .rank-list').removeClass('active')
-    $('.music-rank .rank-list').eq(pos).addClass('active')
-
-})
-$('.dance-rank .rank-type').on('click', 'li', function() {
-    $(this).siblings().removeClass('active')
-    $(this).addClass('active')
-    let pos = $(this).index()
-    $('.dance-rank .rank-list').removeClass('active')
-    $('.dance-rank .rank-list').eq(pos).addClass('active')
-
-})
-$('.fish-rank .rank-type').on('click', 'li', function() {
-    $(this).siblings().removeClass('active')
-    $(this).addClass('active')
-    let pos = $(this).index()
-    $('.fish-rank .rank-list').removeClass('active')
-    $('.fish-rank .rank-list').eq(pos).addClass('active')
-
-})
-$('.technology-rank .rank-type').on('click', 'li', function() {
-    $(this).siblings().removeClass('active')
-    $(this).addClass('active')
-    let pos = $(this).index()
-    $('.technology-rank .rank-list').removeClass('active')
-    $('.technology-rank .rank-list').eq(pos).addClass('active')
-
-})
-$('.sports-rank .rank-type').on('click', 'li', function() {
-    $(this).siblings().removeClass('active')
-    $(this).addClass('active')
-    let pos = $(this).index()
-    $('.sports-rank .rank-list').removeClass('active')
-    $('.sports-rank .rank-list').eq(pos).addClass('active')
-
-})
-
-//article-list
+$('.rank-type').on('click', 'li', function() {
+        console.log($(this))
+        $(this).siblings().removeClass('active')
+        $(this).addClass('active')
+        let index = $(this).index()
+        $(this).parents('.rank').find('.rank-list').removeClass('active')
+        $(this).parents('.rank').find('.rank-list').eq(index).addClass('active')
+    })
+    //article-list
 
 $('.article-type').on('mouseenter', 'li', function() {
     $(this).siblings().removeClass('active')

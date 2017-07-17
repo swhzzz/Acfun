@@ -39,12 +39,6 @@ button {
   content: '';
   clear: both; }
 
-.middle:after {
-  content: '';
-  display: inline-block;
-  visibility: hidden;
-  vertical-align: middle; }
-
 .center {
   width: 980px;
   margin: 40px auto 0 auto; }
@@ -52,112 +46,117 @@ button {
 .column-left {
   float: left;
   width: 700px; }
-  .column-left h2 {
-    position: relative;
-    margin-bottom: 10px; }
-    .column-left h2 img {
-      vertical-align: middle;
-      width: 40px; }
-    .column-left h2 a {
-      margin-left: 10px; }
-      .column-left h2 a:hover {
-        color: #f84962; }
-    .column-left h2 button {
-      padding: 2px 6px;
-      border: 1px solid #e2e2e2;
-      border-radius: 4px;
-      margin-left: 10px;
-      background-color: #fff;
-      vertical-align: middle; }
-      .column-left h2 button:hover {
-        background-color: #e2e2e2; }
-    .column-left h2 .title-right {
-      position: absolute;
-      right: 0;
-      top: 0;
-      font-size: 12px;
-      margin-top: 10px; }
-      .column-left h2 .title-right a {
-        cursor: pointer;
-        margin-right: 10px; }
-        .column-left h2 .title-right a:hover {
-          color: #f84962; }
-      .column-left h2 .title-right .more {
-        color: #f84962; }
-  .column-left .video-list {
-    margin-left: -20px;
-    margin-top: -20px; }
-    .column-left .video-list li {
-      float: left;
-      margin-left: 20px;
-      margin-top: 20px;
-      width: 160px; }
-      .column-left .video-list li img {
-        vertical-align: top;
-        width: 160px;
-        height: 90px;
-        cursor: pointer; }
-      .column-left .video-list li h4 {
-        position: relative;
-        overflow: hidden;
-        cursor: pointer;
-        margin-top: 5px; }
-        .column-left .video-list li h4 i {
-          font-size: 12px; }
-        .column-left .video-list li h4 b {
-          font-size: 12px;
-          margin-left: 40px; }
-        .column-left .video-list li h4:hover {
-          color: #f84962; }
-          .column-left .video-list li h4:hover p {
-            bottom: -20px; }
-      .column-left .video-list li p {
-        width: 160px;
-        margin-top: 5px;
-        position: absolute;
-        background-color: #fff;
-        bottom: 0;
-        color: #9c9999;
-        transition: all .5s; }
-    .column-left .video-list .first-video {
-      width: 340px;
-      height: 270px; }
-      .column-left .video-list .first-video img {
-        width: 340px;
-        height: 240px;
-        vertical-align: top; }
-      .column-left .video-list .first-video p {
-        position: static;
-        width: 340px;
-        margin-top: 0; }
 
 .column-right {
   float: right;
   width: 260px;
   margin-left: 20px; }
-  .column-right .rank {
-    position: relative; }
-    .column-right .rank .rank-type {
-      position: relative; }
-      .column-right .rank .rank-type h2 a:hover {
+
+.video-title {
+  position: relative;
+  margin-bottom: 10px; }
+  .video-title img {
+    vertical-align: middle;
+    width: 40px; }
+  .video-title a {
+    margin-left: 10px; }
+    .video-title a:hover {
+      color: #f84962; }
+  .video-title button {
+    padding: 2px 6px;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    margin-left: 10px;
+    background-color: #fff;
+    vertical-align: middle; }
+    .video-title button:hover {
+      background-color: #e2e2e2; }
+  .video-title .title-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 12px;
+    margin-top: 10px; }
+    .video-title .title-right a {
+      cursor: pointer;
+      margin-right: 10px; }
+      .video-title .title-right a:hover {
         color: #f84962; }
-      .column-right .rank .rank-type ul {
-        position: absolute;
-        top: 3px;
-        right: 0; }
-        .column-right .rank .rank-type ul li {
-          float: left;
-          padding: 2px 10px;
-          cursor: pointer; }
-        .column-right .rank .rank-type ul .active {
-          color: #f84962;
-          background-color: #f8e7e8; }
-    .column-right .rank .active {
-      display: block; }
+    .video-title .title-right .more {
+      color: #f84962; }
+
+.video-list {
+  margin-left: -20px;
+  margin-top: -20px; }
+  .video-list li {
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 160px; }
+    .video-list li img {
+      vertical-align: top;
+      width: 160px;
+      height: 90px;
+      cursor: pointer; }
+    .video-list li h4 {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      margin-top: 5px; }
+      .video-list li h4 i {
+        font-size: 12px; }
+      .video-list li h4 b {
+        font-size: 12px;
+        margin-left: 40px; }
+      .video-list li h4:hover {
+        color: #f84962; }
+        .video-list li h4:hover p {
+          bottom: -20px; }
+    .video-list li p {
+      width: 160px;
+      margin-top: 5px;
+      position: absolute;
+      background-color: #fff;
+      bottom: 0;
+      color: #9c9999;
+      transition: all .5s; }
+  .video-list .first-video {
+    width: 340px;
+    height: 270px; }
+    .video-list .first-video img {
+      width: 340px;
+      height: 240px;
+      vertical-align: top; }
+    .video-list .first-video p {
+      position: static;
+      width: 340px;
+      margin-top: 0; }
+
+.rank {
+  position: relative; }
+  .rank .rank-type {
+    position: relative; }
+    .rank .rank-type h2 {
+      margin-top: 6px; }
+      .rank .rank-type h2 a:hover {
+        color: #f84962; }
+    .rank .rank-type ul {
+      position: absolute;
+      top: 3px;
+      right: 0; }
+      .rank .rank-type ul li {
+        float: left;
+        padding: 2px 10px;
+        cursor: pointer; }
+      .rank .rank-type ul .active {
+        color: #f84962;
+        background-color: #f8e7e8; }
+  .rank .active {
+    display: block; }
 
 .rank-list {
   display: none;
-  margin-top: 25px;
+  margin-top: 19px;
   height: 423px; }
   .rank-list li + li {
     margin-top: 14px; }
@@ -232,12 +231,6 @@ button {
   background-color: #e4e4e4; }
   .view-more:hover {
     background-color: #bfbebc; }
-
-.nav-fixed {
-  position: fixed;
-  top: 45px;
-  z-index: 50;
-  width: 100%; }
 
 header .wrap {
   position: fixed;
@@ -422,6 +415,12 @@ header nav {
     opacity: 0.9;
     border-bottom: 1px solid #eee;
     box-shadow: 0px 1px #eee; }
+
+.nav-fixed {
+  position: fixed;
+  top: 45px;
+  z-index: 50;
+  width: 100%; }
 
 .carouselAndVideo {
   margin-top: 10px; }
