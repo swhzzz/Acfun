@@ -875,6 +875,124 @@ header {
     }
 }
 
+.fanju {
+    .fanju-type {
+        position: absolute;
+        top: 8px;
+        left: 108px;
+        font-size: 12px;
+        li {
+            float: left;
+            padding: 2px 10px;
+            cursor: pointer;
+        }
+        .active {
+            color: $theme-red;
+            background-color: rgb(248, 231, 232);
+        }
+    }
+    .fanju-list {
+        display: none;
+    }
+    .active {
+        display: block;
+    }
+    .playtime-table {
+        li {
+            float: left;
+            width: 100px;
+            height: 530px;
+            overflow: hidden;
+            box-sizing: border-box;
+            border-right: 1px solid rgb(240, 240, 240);
+            >a {
+                display: block;
+                height: 50px;
+                margin-bottom: 10px;
+                p {
+                    max-height: 36px;
+                    margin-top: 10px;
+                    padding: 0 10px;
+                    overflow: hidden;
+                }
+                b {
+                    padding: 0 10px;
+                    color: $theme-red;
+                    &:before {
+                        content: '·';
+                        padding-right: 5px;
+                    }
+                }
+                span {
+                    padding: 0 10px;
+                    color: $font-grey;
+                }
+                &:hover {
+                    p {
+                        color: $theme-red;
+                    }
+                }
+            }
+        }
+        img {
+            width: 124px;
+            height: 70px;
+        }
+        h4 {
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: #fff;
+            background-color: $theme-red;
+            border-bottom: 1px solid rgb(240, 240, 240);
+        }
+        .active {
+            background-color: rgb(250, 233, 234);
+        }
+    }
+    .newcomicpublish {
+        margin-top: -20px;
+        margin-left: -20px;
+        li {
+            float: left;
+            width: 160px;
+            margin-top: 20px;
+            margin-left: 20px;
+            p {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin-top: 2px;
+            }
+            a:hover {
+                color: $theme-red;
+            }
+            span {
+                float: left;
+                margin-top: 2px;
+                color: $theme-grey2;
+            }
+            .active {
+                color: $theme-red;
+            }
+            i {
+                float: right;
+                margin-top: 2px;
+                color: $theme-grey2;
+            }
+        }
+    }
+    .anli {
+        h2 {
+            margin-top: 6px;
+            margin-bottom: 20px;
+        }
+        img {
+            margin-bottom: 20px;
+        }
+    }
+}
+
 .ads {
     margin-top: 40px;
 }

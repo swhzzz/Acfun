@@ -136,9 +136,6 @@ navList.on('mouseleave', function(e) {
 
 
 
-
-
-
 //carousel模块
 //插入头尾的复制图片
 let firstLiClone = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.carousel>li:first').clone()
@@ -244,21 +241,31 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.banna-rank .rank-type').on('cli
 })
 
 __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.rank-type').on('click', 'li', function() {
-        console.log(__WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this))
-        __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).siblings().removeClass('active')
-        __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).addClass('active')
-        let index = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).index()
-        __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).parents('.rank').find('.rank-list').removeClass('active')
-        __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).parents('.rank').find('.rank-list').eq(index).addClass('active')
-    })
-    //article-list
+    console.log(__WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this))
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).siblings().removeClass('active')
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).addClass('active')
+    let index = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).index()
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).parents('.rank').find('.rank-list').removeClass('active')
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).parents('.rank').find('.rank-list').eq(index).addClass('active')
+})
+
+//article-list
 
 __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.article-type').on('mouseenter', 'li', function() {
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).siblings().removeClass('active')
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).addClass('active')
-    let pos = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).index()
+    let index = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).index()
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.article-list>li').removeClass('active')
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.article-list>li').eq(pos).addClass('active')
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.article-list>li').eq(index).addClass('active')
+})
+
+//fanju-type
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.fanju-type').on('click', 'li', function() {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).siblings().removeClass('active')
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).addClass('active')
+    let index = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).index()
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.fanju-list').removeClass('active')
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.fanju-list').eq(index).addClass('active')
 })
 
 /***/ }),

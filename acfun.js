@@ -63,9 +63,6 @@ navList.on('mouseleave', function(e) {
 
 
 
-
-
-
 //carousel模块
 //插入头尾的复制图片
 let firstLiClone = $('.carousel>li:first').clone()
@@ -171,19 +168,29 @@ $('.banna-rank .rank-type').on('click', 'li', function() {
 })
 
 $('.rank-type').on('click', 'li', function() {
-        console.log($(this))
-        $(this).siblings().removeClass('active')
-        $(this).addClass('active')
-        let index = $(this).index()
-        $(this).parents('.rank').find('.rank-list').removeClass('active')
-        $(this).parents('.rank').find('.rank-list').eq(index).addClass('active')
-    })
-    //article-list
+    console.log($(this))
+    $(this).siblings().removeClass('active')
+    $(this).addClass('active')
+    let index = $(this).index()
+    $(this).parents('.rank').find('.rank-list').removeClass('active')
+    $(this).parents('.rank').find('.rank-list').eq(index).addClass('active')
+})
+
+//article-list
 
 $('.article-type').on('mouseenter', 'li', function() {
     $(this).siblings().removeClass('active')
     $(this).addClass('active')
-    let pos = $(this).index()
+    let index = $(this).index()
     $('.article-list>li').removeClass('active')
-    $('.article-list>li').eq(pos).addClass('active')
+    $('.article-list>li').eq(index).addClass('active')
+})
+
+//fanju-type
+$('.fanju-type').on('click', 'li', function() {
+    $(this).siblings().removeClass('active')
+    $(this).addClass('active')
+    let index = $(this).index()
+    $('.fanju-list').removeClass('active')
+    $('.fanju-list').eq(index).addClass('active')
 })

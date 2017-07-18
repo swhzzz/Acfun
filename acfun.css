@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0; }
@@ -675,6 +676,92 @@ header nav {
         line-height: 20px; }
         .banna-rank .column-right .article-list p:hover {
           color: #2ab69d; }
+
+.fanju .fanju-type {
+  position: absolute;
+  top: 8px;
+  left: 108px;
+  font-size: 12px; }
+  .fanju .fanju-type li {
+    float: left;
+    padding: 2px 10px;
+    cursor: pointer; }
+  .fanju .fanju-type .active {
+    color: #f84962;
+    background-color: #f8e7e8; }
+.fanju .fanju-list {
+  display: none; }
+.fanju .active {
+  display: block; }
+.fanju .playtime-table li {
+  float: left;
+  width: 100px;
+  height: 530px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-right: 1px solid #f0f0f0; }
+  .fanju .playtime-table li > a {
+    display: block;
+    height: 50px;
+    margin-bottom: 10px; }
+    .fanju .playtime-table li > a p {
+      max-height: 36px;
+      margin-top: 10px;
+      padding: 0 10px;
+      overflow: hidden; }
+    .fanju .playtime-table li > a b {
+      padding: 0 10px;
+      color: #f84962; }
+      .fanju .playtime-table li > a b:before {
+        content: '·';
+        padding-right: 5px; }
+    .fanju .playtime-table li > a span {
+      padding: 0 10px;
+      color: #999; }
+    .fanju .playtime-table li > a:hover p {
+      color: #f84962; }
+.fanju .playtime-table img {
+  width: 124px;
+  height: 70px; }
+.fanju .playtime-table h4 {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #fff;
+  background-color: #f84962;
+  border-bottom: 1px solid #f0f0f0; }
+.fanju .playtime-table .active {
+  background-color: #fae9ea; }
+.fanju .newcomicpublish {
+  margin-top: -20px;
+  margin-left: -20px; }
+  .fanju .newcomicpublish li {
+    float: left;
+    width: 160px;
+    margin-top: 20px;
+    margin-left: 20px; }
+    .fanju .newcomicpublish li p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-top: 2px; }
+    .fanju .newcomicpublish li a:hover {
+      color: #f84962; }
+    .fanju .newcomicpublish li span {
+      float: left;
+      margin-top: 2px;
+      color: #9c9999; }
+    .fanju .newcomicpublish li .active {
+      color: #f84962; }
+    .fanju .newcomicpublish li i {
+      float: right;
+      margin-top: 2px;
+      color: #9c9999; }
+.fanju .anli h2 {
+  margin-top: 6px;
+  margin-bottom: 20px; }
+.fanju .anli img {
+  margin-bottom: 20px; }
 
 .ads {
   margin-top: 40px; }
