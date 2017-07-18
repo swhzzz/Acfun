@@ -89,10 +89,8 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.icon-search').on('click', funct
 })
 
 __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#clear-history').on('click', function() {
-    console.log(1)
     window.localStorage.clear()
-    console.log(__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-content'))
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-content').empty()
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-part').hide()
 })
 __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').on('focus', () => {
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#hot-search').show()

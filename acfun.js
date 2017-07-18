@@ -16,10 +16,8 @@ $('.icon-search').on('click', function() {
 })
 
 $('#clear-history').on('click', function() {
-    console.log(1)
     window.localStorage.clear()
-    console.log($('#history-content'))
-    $('#history-content').empty()
+    $('#history-part').hide()
 })
 $('#search-input').on('focus', () => {
     $('#hot-search').show()
