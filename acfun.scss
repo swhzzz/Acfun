@@ -377,22 +377,49 @@ header {
                     display: none;
                     top: 100%;
                     width: 100%;
+                    padding: 16px;
+                    box-sizing: border-box;
+                    overflow: hidden;
                     background-color: #f8f8f8;
-                    opacity: 0.9;
+                    opacity: 0.95;
                     z-index: 500;
+                }
+                #history-part {
+                    box-sizing: border-box;
+                    width: 100%;
+                    .history-head {
+                        padding-bottom: 8px;
+                        border-bottom: 1px solid $theme-grey;
+                    }
+                    ul {
+                        padding: 8px 0;
+                        li {
+                            float: left;
+                            padding: 4px 8px;
+                            margin-right: 16px;
+                            background-color: #fff;
+                            border: 1px solid $theme-grey;
+                        }
+                    }
+                }
+                .history {
+                    float: left;
+                }
+                #clear-history {
+                    float: right;
+                    cursor: pointer;
                 }
                 .today-hot-search {
                     h4 {
                         text-align: left;
                         color: $font-grey;
-                        padding: 8px 16px;
+                        padding-bottom: 8px;
                         border-bottom: 1px solid $theme-grey;
                     }
                     ul {
-                        padding: 0 16px;
                         li {
                             text-align: left;
-                            padding: 8px 0;
+                            padding-top: 16px;
                             color: $font-grey;
                             &:hover {
                                 color: $theme-red;

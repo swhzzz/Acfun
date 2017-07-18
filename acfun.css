@@ -300,23 +300,43 @@ header .wrap {
         display: none;
         top: 100%;
         width: 100%;
+        padding: 16px;
+        box-sizing: border-box;
+        overflow: hidden;
         background-color: #f8f8f8;
-        opacity: 0.9;
+        opacity: 0.95;
         z-index: 500; }
+      header .wrap .header-top .search #history-part {
+        box-sizing: border-box;
+        width: 100%; }
+        header .wrap .header-top .search #history-part .history-head {
+          padding-bottom: 8px;
+          border-bottom: 1px solid #e2e2e2; }
+        header .wrap .header-top .search #history-part ul {
+          padding: 8px 0; }
+          header .wrap .header-top .search #history-part ul li {
+            float: left;
+            padding: 4px 8px;
+            margin-right: 16px;
+            background-color: #fff;
+            border: 1px solid #e2e2e2; }
+      header .wrap .header-top .search .history {
+        float: left; }
+      header .wrap .header-top .search #clear-history {
+        float: right;
+        cursor: pointer; }
       header .wrap .header-top .search .today-hot-search h4 {
         text-align: left;
         color: #999;
-        padding: 8px 16px;
+        padding-bottom: 8px;
         border-bottom: 1px solid #e2e2e2; }
-      header .wrap .header-top .search .today-hot-search ul {
-        padding: 0 16px; }
-        header .wrap .header-top .search .today-hot-search ul li {
-          text-align: left;
-          padding: 8px 0;
-          color: #999; }
-          header .wrap .header-top .search .today-hot-search ul li:hover {
-            color: #f84962;
-            background-color: rgba(248, 73, 98, 0.1); }
+      header .wrap .header-top .search .today-hot-search ul li {
+        text-align: left;
+        padding-top: 16px;
+        color: #999; }
+        header .wrap .header-top .search .today-hot-search ul li:hover {
+          color: #f84962;
+          background-color: rgba(248, 73, 98, 0.1); }
       header .wrap .header-top .search .today-hot-search .hot-top3 {
         color: #f84962; }
       header .wrap .header-top .search .today-hot-search i {

@@ -1,30 +1,62 @@
 import $ from 'jquery'
 window.$ = $
 
-
 // search part
-$('#search-input').on('focus', () => {
-    $('#hot-search').css('display', 'block')
-})
-$('#search-input').on('blur', () => {
-    $('#hot-search').css('display', 'none')
-})
+let dataObj = [] //存放搜索历史
+
 $('#search-input').on('keypress', function(e) {
     if (e.keyCode === 13) {
         startSearch()
+        addHistory()
     }
 })
 $('.icon-search').on('click', function() {
     startSearch()
+    addHistory()
+})
+
+$('#clear-history').on('click', function() {
+    console.log(1)
+    window.localStorage.clear()
+    console.log($('#history-content'))
+    $('#history-content').empty()
+})
+$('#search-input').on('focus', () => {
+    $('#hot-search').show()
+    loadData()
+})
+$('#search-input').on('blur', () => {
+    $('#hot-search').fadeOut(300)
 })
 
 function startSearch() {
     let value = $('#search-input').val()
     if (value === '') {
-        console.log(1)
         value = $('#search-input').attr('placeholder')
     }
     window.open('http://www.acfun.cn/search/?#query=' + value)
+}
+
+function addHistory() {
+    let value = $('#search-input').val()
+    if (value === '') return;
+    dataObj.push(value)
+    $('#history-content').append(`<li> ${value} </li>`)
+    $('#history-part').show()
+    $('#search-input').val('')
+}
+
+function loadData() {
+    let oldDataString = window.localStorage.getItem('data')
+    let data = JSON.parse(oldDataString)
+    for (var i = 0; i < data.length; i++) {
+        $('#history-content').append(`<li>${data[i]}</li>`)
+    }
+}
+
+window.onbeforeunload = function() {
+    let dataString = JSON.stringify(dataObj)
+    window.localStorage.setItem('data', dataString)
 }
 
 $(window).on('scroll', function() {
@@ -168,7 +200,6 @@ $('.banna-rank .rank-type').on('click', 'li', function() {
 })
 
 $('.rank-type').on('click', 'li', function() {
-    console.log($(this))
     $(this).siblings().removeClass('active')
     $(this).addClass('active')
     let index = $(this).index()

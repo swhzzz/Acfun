@@ -74,30 +74,62 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 window.$ = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a
 
-
 // search part
-__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').on('focus', () => {
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#hot-search').css('display', 'block')
-})
-__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').on('blur', () => {
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#hot-search').css('display', 'none')
-})
+let dataObj = [] //存放搜索历史
+
 __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').on('keypress', function(e) {
     if (e.keyCode === 13) {
         startSearch()
+        addHistory()
     }
 })
 __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.icon-search').on('click', function() {
     startSearch()
+    addHistory()
+})
+
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#clear-history').on('click', function() {
+    console.log(1)
+    window.localStorage.clear()
+    console.log(__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-content'))
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-content').empty()
+})
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').on('focus', () => {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#hot-search').show()
+    loadData()
+})
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').on('blur', () => {
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#hot-search').fadeOut(300)
 })
 
 function startSearch() {
     let value = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').val()
     if (value === '') {
-        console.log(1)
         value = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').attr('placeholder')
     }
     window.open('http://www.acfun.cn/search/?#query=' + value)
+}
+
+function addHistory() {
+    let value = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').val()
+    if (value === '') return;
+    dataObj.push(value)
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-content').append(`<li> ${value} </li>`)
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-part').show()
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').val('')
+}
+
+function loadData() {
+    let oldDataString = window.localStorage.getItem('data')
+    let data = JSON.parse(oldDataString)
+    for (var i = 0; i < data.length; i++) {
+        __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-content').append(`<li>${data[i]}</li>`)
+    }
+}
+
+window.onbeforeunload = function() {
+    let dataString = JSON.stringify(dataObj)
+    window.localStorage.setItem('data', dataString)
 }
 
 __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(window).on('scroll', function() {
@@ -241,7 +273,6 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.banna-rank .rank-type').on('cli
 })
 
 __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.rank-type').on('click', 'li', function() {
-    console.log(__WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this))
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).siblings().removeClass('active')
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).addClass('active')
     let index = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).index()
