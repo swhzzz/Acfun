@@ -308,6 +308,7 @@ header .wrap {
         z-index: 500; }
       header .wrap .header-top .search #history-part {
         box-sizing: border-box;
+        display: none;
         width: 100%; }
         header .wrap .header-top .search #history-part .history-head {
           padding-bottom: 8px;
@@ -792,6 +793,13 @@ header nav {
   .ads-container img {
     width: 480px;
     height: 84px; }
+
+#go-top {
+  position: fixed;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 50px;
+  height: 50px; }
 
 footer {
   background-color: #ececec; }

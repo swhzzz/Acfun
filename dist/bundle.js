@@ -90,11 +90,12 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.icon-search').on('click', funct
 
 __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#clear-history').on('click', function() {
     window.localStorage.clear()
+    dataObj = []
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-content').empty()
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-part').hide()
 })
 __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').on('focus', () => {
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#hot-search').show()
-    loadData()
 })
 __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').on('blur', () => {
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#hot-search').fadeOut(300)
@@ -112,7 +113,7 @@ function addHistory() {
     let value = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').val()
     if (value === '') return;
     dataObj.push(value)
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-content').append(`<li> ${value} </li>`)
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-content').prepend(`<li> ${value} </li>`)
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-part').show()
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').val('')
 }
@@ -120,14 +121,19 @@ function addHistory() {
 function loadData() {
     let oldDataString = window.localStorage.getItem('data')
     let data = JSON.parse(oldDataString)
-    for (var i = 0; i < data.length; i++) {
-        __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-content').append(`<li>${data[i]}</li>`)
+    if (data.length !== 0) {
+        for (var i = 0; i < data.length; i++) {
+            __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-content').prepend(`<li>${data[i]}</li>`)
+        }
     }
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-part').show()
 }
-
+loadData()
 window.onbeforeunload = function() {
     let dataString = JSON.stringify(dataObj)
     window.localStorage.setItem('data', dataString)
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-content').empty()
+
 }
 
 __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(window).on('scroll', function() {

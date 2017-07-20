@@ -17,11 +17,12 @@ $('.icon-search').on('click', function() {
 
 $('#clear-history').on('click', function() {
     window.localStorage.clear()
+    dataObj = []
+    $('#history-content').empty()
     $('#history-part').hide()
 })
 $('#search-input').on('focus', () => {
     $('#hot-search').show()
-    loadData()
 })
 $('#search-input').on('blur', () => {
     $('#hot-search').fadeOut(300)
@@ -39,7 +40,7 @@ function addHistory() {
     let value = $('#search-input').val()
     if (value === '') return;
     dataObj.push(value)
-    $('#history-content').append(`<li> ${value} </li>`)
+    $('#history-content').prepend(`<li> ${value} </li>`)
     $('#history-part').show()
     $('#search-input').val('')
 }
@@ -47,14 +48,19 @@ function addHistory() {
 function loadData() {
     let oldDataString = window.localStorage.getItem('data')
     let data = JSON.parse(oldDataString)
-    for (var i = 0; i < data.length; i++) {
-        $('#history-content').append(`<li>${data[i]}</li>`)
+    if (data.length !== 0) {
+        for (var i = 0; i < data.length; i++) {
+            $('#history-content').prepend(`<li>${data[i]}</li>`)
+        }
     }
+    $('#history-part').show()
 }
-
+loadData()
 window.onbeforeunload = function() {
     let dataString = JSON.stringify(dataObj)
     window.localStorage.setItem('data', dataString)
+    $('#history-content').empty()
+
 }
 
 $(window).on('scroll', function() {
