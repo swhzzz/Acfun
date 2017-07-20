@@ -76,26 +76,35 @@ window.$ = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a
 
 // search part
 let dataObj = [] //存放搜索历史
+let oldDataString = window.localStorage.getItem('data')
+let data = JSON.parse(oldDataString)
+for (var key in data) {
+    dataObj.push(data[key])
+}
 
-__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').on('keypress', function(e) {
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').on('keypress', (e) => {
     if (e.keyCode === 13) {
         startSearch()
         addHistory()
     }
 })
-__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.icon-search').on('click', function() {
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.icon-search').on('click', () => {
     startSearch()
     addHistory()
 })
 
-__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#clear-history').on('click', function() {
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#clear-history').on('click', () => {
     window.localStorage.clear()
     dataObj = []
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-content').empty()
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-part').hide()
+    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-content').empty()
 })
 __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').on('focus', () => {
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#hot-search').show()
+    let oldDataString = window.localStorage.getItem('data')
+    let data = JSON.parse(oldDataString)
+    if (data.length !== 0)
+        __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-part').show()
 })
 __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#search-input').on('blur', () => {
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#hot-search').fadeOut(300)
@@ -121,22 +130,22 @@ function addHistory() {
 function loadData() {
     let oldDataString = window.localStorage.getItem('data')
     let data = JSON.parse(oldDataString)
+    console.log(data, data.length)
     if (data.length !== 0) {
         for (var i = 0; i < data.length; i++) {
             __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-content').prepend(`<li>${data[i]}</li>`)
         }
     }
-    __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-part').show()
 }
 loadData()
-window.onbeforeunload = function() {
+
+window.onbeforeunload = () => {
     let dataString = JSON.stringify(dataObj)
     window.localStorage.setItem('data', dataString)
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('#history-content').empty()
-
 }
 
-__WEBPACK_IMPORTED_MODULE_0_jquery___default.a(window).on('scroll', function() {
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a(window).on('scroll', () => {
     if (__WEBPACK_IMPORTED_MODULE_0_jquery___default.a(window).scrollTop() > 179) {
         __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('nav').addClass('nav-fixed')
     } else {
@@ -144,7 +153,7 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(window).on('scroll', function() {
     }
 })
 
-__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.header-banner').on('mousemove', function(e) {
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.header-banner').on('mousemove', (e) => {
     var x = e.clientX
     var y = e.clientY
     if (y > 188 || y < 60 || x > 950) {
@@ -160,11 +169,11 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.header-banner').on('mousemove',
 
 //nav
 let navList = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('nav>ul:first')
-navList.on('mouseenter', function(e) {
+navList.on('mouseenter', (e) => {
     let moreGroupBg = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.moreGroupBg:first')
     moreGroupBg.show()
 })
-navList.on('mouseleave', function(e) {
+navList.on('mouseleave', (e) => {
     let moreGroupBg = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.moreGroupBg:first')
     moreGroupBg.hide()
 })
@@ -238,19 +247,19 @@ __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.bullet').on('click', 'li', func
 
 function autoPlay() { //自动播放
     clearInterval(timer)
-    timer = setInterval(function() {
+    timer = setInterval(() => {
         playNext(1)
     }, 3000)
 }
 var defereds = [];
 var $imgs = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a('.carousel>img')
-$imgs.each(function() {
+$imgs.each(() => {
     var dfd = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a.Deferred();
 
     __WEBPACK_IMPORTED_MODULE_0_jquery___default.a(this).load(dfd.resolve);
     defereds.push(dfd);
 });
-__WEBPACK_IMPORTED_MODULE_0_jquery___default.a.when.apply(null, defereds).done(function() {
+__WEBPACK_IMPORTED_MODULE_0_jquery___default.a.when.apply(null, defereds).done(() => {
     console.log('load compeleted');
     autoPlay()
 });

@@ -3,26 +3,35 @@ window.$ = $
 
 // search part
 let dataObj = [] //存放搜索历史
+let oldDataString = window.localStorage.getItem('data')
+let data = JSON.parse(oldDataString)
+for (var key in data) {
+    dataObj.push(data[key])
+}
 
-$('#search-input').on('keypress', function(e) {
+$('#search-input').on('keypress', (e) => {
     if (e.keyCode === 13) {
         startSearch()
         addHistory()
     }
 })
-$('.icon-search').on('click', function() {
+$('.icon-search').on('click', () => {
     startSearch()
     addHistory()
 })
 
-$('#clear-history').on('click', function() {
+$('#clear-history').on('click', () => {
     window.localStorage.clear()
     dataObj = []
-    $('#history-content').empty()
     $('#history-part').hide()
+    $('#history-content').empty()
 })
 $('#search-input').on('focus', () => {
     $('#hot-search').show()
+    let oldDataString = window.localStorage.getItem('data')
+    let data = JSON.parse(oldDataString)
+    if (data.length !== 0)
+        $('#history-part').show()
 })
 $('#search-input').on('blur', () => {
     $('#hot-search').fadeOut(300)
@@ -48,22 +57,22 @@ function addHistory() {
 function loadData() {
     let oldDataString = window.localStorage.getItem('data')
     let data = JSON.parse(oldDataString)
+    console.log(data, data.length)
     if (data.length !== 0) {
         for (var i = 0; i < data.length; i++) {
             $('#history-content').prepend(`<li>${data[i]}</li>`)
         }
     }
-    $('#history-part').show()
 }
 loadData()
-window.onbeforeunload = function() {
+
+window.onbeforeunload = () => {
     let dataString = JSON.stringify(dataObj)
     window.localStorage.setItem('data', dataString)
     $('#history-content').empty()
-
 }
 
-$(window).on('scroll', function() {
+$(window).on('scroll', () => {
     if ($(window).scrollTop() > 179) {
         $('nav').addClass('nav-fixed')
     } else {
@@ -71,7 +80,7 @@ $(window).on('scroll', function() {
     }
 })
 
-$('.header-banner').on('mousemove', function(e) {
+$('.header-banner').on('mousemove', (e) => {
     var x = e.clientX
     var y = e.clientY
     if (y > 188 || y < 60 || x > 950) {
@@ -87,11 +96,11 @@ $('.header-banner').on('mousemove', function(e) {
 
 //nav
 let navList = $('nav>ul:first')
-navList.on('mouseenter', function(e) {
+navList.on('mouseenter', (e) => {
     let moreGroupBg = $('.moreGroupBg:first')
     moreGroupBg.show()
 })
-navList.on('mouseleave', function(e) {
+navList.on('mouseleave', (e) => {
     let moreGroupBg = $('.moreGroupBg:first')
     moreGroupBg.hide()
 })
@@ -165,19 +174,19 @@ $('.bullet').on('click', 'li', function() {
 
 function autoPlay() { //自动播放
     clearInterval(timer)
-    timer = setInterval(function() {
+    timer = setInterval(() => {
         playNext(1)
     }, 3000)
 }
 var defereds = [];
 var $imgs = $('.carousel>img')
-$imgs.each(function() {
+$imgs.each(() => {
     var dfd = $.Deferred();
 
     $(this).load(dfd.resolve);
     defereds.push(dfd);
 });
-$.when.apply(null, defereds).done(function() {
+$.when.apply(null, defereds).done(() => {
     console.log('load compeleted');
     autoPlay()
 });
