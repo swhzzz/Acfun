@@ -1,3 +1,6 @@
+import './index.html'
+import './src/pic/banner.jpg'
+import './acfun.scss'
 import $ from 'jquery'
 window.$ = $
 
