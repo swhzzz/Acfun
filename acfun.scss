@@ -420,7 +420,8 @@ header {
                     ul {
                         li {
                             text-align: left;
-                            padding-top: 16px;
+                            padding-top: 8px;
+                            padding-bottom: 8px;
                             color: $font-grey;
                             &:hover {
                                 color: $theme-red;
