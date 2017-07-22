@@ -1034,14 +1034,6 @@ header {
     }
 }
 
-#go-top {
-    position: fixed;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.9);
-    width: 50px;
-    height: 50px;
-}
-
 footer {
     background-color: rgb(236, 236, 236);
     .footer-top {
@@ -1106,5 +1098,30 @@ footer {
             color: rgb(204, 204, 204);
         }
         text-align: center;
+    }
+}
+
+#go-top {
+    position: fixed;
+    display: none;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+    right: 50px;
+    bottom: 50px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 20px;
+        height: 20px;
+        color: #fff;
+        border-top: 3px solid #fff;
+        border-left: 3px solid #fff;
+        transform: translate(-50%, -4px) rotate(45deg);
     }
 }

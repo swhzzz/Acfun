@@ -12,7 +12,7 @@ for (var key in data) {
     dataObj.push(data[key])
 }
 
-$('#search-input').on('keypress', (e) => {
+$('#search-input').on('keypress', e => {
     if (e.keyCode === 13) {
         startSearch()
         addHistory()
@@ -81,9 +81,14 @@ $(window).on('scroll', () => {
     } else {
         $('nav').removeClass('nav-fixed')
     }
+    if ($(window).scrollTop() > 300) {
+        $('#go-top').fadeIn(500)
+    } else {
+        $('#go-top').fadeOut(500)
+    }
 })
 
-$('.header-banner').on('mousemove', (e) => {
+$('.header-banner').on('mousemove', e => {
     var x = e.clientX
     var y = e.clientY
     if (y > 188 || y < 60 || x > 950) {
@@ -99,15 +104,14 @@ $('.header-banner').on('mousemove', (e) => {
 
 //nav
 let navList = $('nav>ul:first')
-navList.on('mouseenter', (e) => {
+navList.on('mouseenter', e => {
     let moreGroupBg = $('.moreGroupBg:first')
     moreGroupBg.show()
 })
-navList.on('mouseleave', (e) => {
+navList.on('mouseleave', e => {
     let moreGroupBg = $('.moreGroupBg:first')
     moreGroupBg.hide()
 })
-
 
 
 
@@ -240,4 +244,15 @@ $('.fanju-type').on('click', 'li', function() {
     let index = $(this).index()
     $('.fanju-list').removeClass('active')
     $('.fanju-list').eq(index).addClass('active')
+})
+
+$('#go-top').on('click', () => {
+    var timer = null;
+    var y = $(window).scrollTop()
+    console.log(y)
+    timer = setInterval(() => {
+        if (y <= 0) clearInterval(timer)
+        y -= 80
+        $(window).scrollTop(y)
+    }, 1)
 })
