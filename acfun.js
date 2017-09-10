@@ -33,7 +33,7 @@ $('#search-input').on('focus', () => {
     $('#hot-search').show()
     let oldDataString = window.localStorage.getItem('data')
     let data = JSON.parse(oldDataString)
-    if (data.length !== 0)
+    if (data !== null)
         $('#history-part').show()
 })
 $('#search-input').on('blur', () => {
@@ -60,8 +60,7 @@ function addHistory() {
 function loadData() {
     let oldDataString = window.localStorage.getItem('data')
     let data = JSON.parse(oldDataString)
-    console.log(data, data.length)
-    if (data.length !== 0) {
+    if (data != null) {
         for (var i = 0; i < data.length; i++) {
             $('#history-content').prepend(`<li>${data[i]}</li>`)
         }
