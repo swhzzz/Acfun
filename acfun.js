@@ -11,6 +11,7 @@ let data = JSON.parse(oldDataString)
 for (var key in data) {
     dataObj.push(data[key])
 }
+renderData()
 
 $('#search-input').on('keypress', e => {
     if (e.keyCode === 13) {
@@ -18,6 +19,7 @@ $('#search-input').on('keypress', e => {
         addHistory()
     }
 })
+
 $('.icon-search').on('click', () => {
     startSearch()
     addHistory()
@@ -29,11 +31,13 @@ $('#clear-history').on('click', () => {
     $('#history-part').hide()
     $('#history-content').empty()
 })
+
 $('#search-input').on('focus', () => {
     $('#hot-search').show()
     if (data !== null && data.length !== 0)
         $('#history-part').show()
 })
+
 $('#search-input').on('blur', () => {
     $('#hot-search').fadeOut(300)
 })
@@ -55,14 +59,14 @@ function addHistory() {
     $('#search-input').val('')
 }
 
-function loadData() {
+function renderData() {
     if (data != null && data.length !== 0) {
         for (var i = 0; i < data.length; i++) {
             $('#history-content').prepend(`<li>${data[i]}</li>`)
         }
     }
 }
-loadData()
+
 
 window.onbeforeunload = () => {
     let dataString = JSON.stringify(dataObj)
