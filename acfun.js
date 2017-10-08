@@ -9,21 +9,20 @@ let carouselTimer = null
 let imgs = document.querySelectorAll('img')
 loadImg()
 window.addEventListener('scroll', () => {
-    loadImg()
+    clearTimeout(carouselTimer)
+    carouselTimer = setTimeout(() => {
+        loadImg()
+    }, 500)
 })
 
 function loadImg() {
-    clearTimeout(carouselTimer)
-    carouselTimer = setTimeout(() => {
-        for (var i = 0; i < imgs.length; i++) {
-            let img = imgs[i]
-            if (isShow(img)) {
-                let src = img.dataset.src
-                img.src = src
-                console.log(1)
-            }
+    for (var i = 0; i < imgs.length; i++) {
+        let img = imgs[i]
+        if (isShow(img)) {
+            let src = img.dataset.src
+            img.src = src
         }
-    }, 500)
+    }
 }
 
 function isShow(el) {
@@ -280,7 +279,6 @@ $('.fanju-type').on('click', 'li', function() {
 $('#go-top').on('click', () => {
     var timer = null;
     var y = $(window).scrollTop()
-    console.log(y)
     timer = setInterval(() => {
         if (y <= 0) clearInterval(timer)
         y -= 80
