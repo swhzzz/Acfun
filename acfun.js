@@ -5,21 +5,18 @@ import $ from 'jquery'
 window.$ = $
 
 let imgs = document.querySelectorAll('img')
-for (var i = 0; i < imgs.length; i++) {
-    let img = imgs[i]
-    laodImg(img)
-}
+loadImg()
 window.addEventListener('scroll', () => {
-    for (var i = 0; i < imgs.length; i++) {
-        let img = imgs[i]
-        laodImg(img)
-    }
+    loadImg()
 })
 
-function loadImg(img) {
-    if (isShow(img)) {
-        let src = img.dataset.src
-        img.src = src
+function loadImg() {
+    for (var i = 0; i < imgs.length; i++) {
+        let img = imgs[i]
+        if (isShow(img)) {
+            let src = img.dataset.src
+            img.src = src
+        }
     }
 }
 
@@ -209,18 +206,27 @@ function autoPlay() { //自动播放
         playNext(1)
     }, 3000)
 }
-var defereds = [];
-var $imgs = $('.carousel>img')
-$imgs.each(() => {
-    var dfd = $.Deferred();
 
-    $(this).load(dfd.resolve);
-    defereds.push(dfd);
-});
-$.when.apply(null, defereds).done(() => {
-    // console.log('load compeleted');
+
+// var carouselImgs = document.querySelectorAll('.carousel img')
+// var promises = []
+
+// for (var i = 0; i < carouselImgs.length; i++) {
+//     promises.push(new Promise((resolve, reject) => {
+//         carouselImgs[i].onload = () => {
+//             resolve()
+//         }
+//     }))
+// }
+// console.log(promises)
+
+// Promise.all(promises).then(() => {
+//     autoPlay()
+//     console.log(1)
+// })
+setTimeout(() => {
     autoPlay()
-});
+}, 1000)
 
 
 //videoIntro
