@@ -5,15 +5,23 @@ import $ from 'jquery'
 window.$ = $
 
 let imgs = document.querySelectorAll('img')
+for (var i = 0; i < imgs.length; i++) {
+    let img = imgs[i]
+    laodImg(img)
+}
 window.addEventListener('scroll', () => {
     for (var i = 0; i < imgs.length; i++) {
         let img = imgs[i]
-        if (isShow(img)) {
-            let src = img.dataset.src
-            img.src = src
-        }
+        laodImg(img)
     }
 })
+
+function loadImg(img) {
+    if (isShow(img)) {
+        let src = img.dataset.src
+        img.src = src
+    }
+}
 
 function isShow(el) {
     if (window.innerHeight + window.scrollY > el.offsetTop) {
