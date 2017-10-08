@@ -208,25 +208,20 @@ function autoPlay() { //自动播放
 }
 
 
-// var carouselImgs = document.querySelectorAll('.carousel img')
-// var promises = []
+var carouselImgs = document.querySelectorAll('.carousel img')
+var promises = []
 
-// for (var i = 0; i < carouselImgs.length; i++) {
-//     promises.push(new Promise((resolve, reject) => {
-//         carouselImgs[i].onload = () => {
-//             resolve()
-//         }
-//     }))
-// }
-// console.log(promises)
+for (var i = 0; i < carouselImgs.length; i++) {
+    promises.push(new Promise((resolve, reject) => {
+        carouselImgs[i].onload = () => {
+            resolve()
+        }
+    }))
+}
 
-// Promise.all(promises).then(() => {
-//     autoPlay()
-//     console.log(1)
-// })
-setTimeout(() => {
+Promise.all(promises).then(() => {
     autoPlay()
-}, 1000)
+})
 
 
 //videoIntro
