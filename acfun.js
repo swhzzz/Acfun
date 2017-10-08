@@ -4,6 +4,23 @@ import './acfun.scss'
 import $ from 'jquery'
 window.$ = $
 
+let imgs = document.querySelectorAll('img')
+window.addEventListener('scroll', () => {
+    for (var i = 0; i < imgs.length; i++) {
+        let img = imgs[i]
+        if (isShow(img)) {
+            let src = img.dataset.src
+            img.src = src
+        }
+    }
+})
+
+function isShow(el) {
+    if (window.innerHeight + window.scrollY > el.offsetTop) {
+        return true
+    }
+}
+
 // search part
 let dataObj = [] //存放搜索历史
 let oldDataString = window.localStorage.getItem('data')
@@ -193,7 +210,7 @@ $imgs.each(() => {
     defereds.push(dfd);
 });
 $.when.apply(null, defereds).done(() => {
-    console.log('load compeleted');
+    // console.log('load compeleted');
     autoPlay()
 });
 
