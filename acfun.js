@@ -4,6 +4,8 @@ import './acfun.scss'
 import $ from 'jquery'
 window.$ = $
 
+
+let carouselTimer = null
 let imgs = document.querySelectorAll('img')
 loadImg()
 window.addEventListener('scroll', () => {
@@ -11,13 +13,17 @@ window.addEventListener('scroll', () => {
 })
 
 function loadImg() {
-    for (var i = 0; i < imgs.length; i++) {
-        let img = imgs[i]
-        if (isShow(img)) {
-            let src = img.dataset.src
-            img.src = src
+    clearTimeout(carouselTimer)
+    carouselTimer = setTimeout(() => {
+        for (var i = 0; i < imgs.length; i++) {
+            let img = imgs[i]
+            if (isShow(img)) {
+                let src = img.dataset.src
+                img.src = src
+                console.log(1)
+            }
         }
-    }
+    }, 500)
 }
 
 function isShow(el) {
