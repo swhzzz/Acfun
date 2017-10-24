@@ -20,10 +20,6 @@ module.exports = {
                 exclude: /node-modules/,
                 loader: 'style-loader!css-loader!sass-loader',
             },
-            // {
-            //     test: /\.(png|jpg|jpeg|gif|woff|woff2|eot|ttf|svg)$/,
-            //     loader: 'url-loader?limit=8192',
-            // },
             {
                 test: /\.(png|jpg|jpeg|gif)$/,
                 loader: "file-loader?name=img/[hash:8].[name].[ext]"
