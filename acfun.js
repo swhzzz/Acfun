@@ -12,7 +12,7 @@ window.addEventListener('scroll', () => {
     clearTimeout(carouselTimer)
     carouselTimer = setTimeout(() => {
         loadImg()
-    }, 500)
+    }, 100)
 })
 
 function loadImg() {
